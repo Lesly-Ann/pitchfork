@@ -85,6 +85,9 @@ def kocher11(s):
     state = funcEntryState(proj, "victim_function_v11", [(None, publicValue())])
     return (proj, state)
 
+def TestcasesProject():
+    return angr.Project('test/test')
+
 def newSpectreV1TestcasesProject():
     return angr.Project('new-testcases/spectrev1')
 
@@ -146,6 +149,16 @@ def forwarding_example_4():
 def forwarding_example_5():
     proj = forwardingTestcasesProject()
     state = funcEntryState(proj, "example_5", [
+        ("idx", publicValue(bits=64)),
+        ("val", publicValue(bits=8)),
+        ("idx2", publicValue(bits=64))
+    ])
+    addSecretObject(proj, state, 'secretarray', 16)
+    return (proj, state)
+
+def test_case_1():
+    proj = TestcasesProject()
+    state = funcEntryState(proj, "case_1", [
         ("idx", publicValue(bits=64)),
         ("val", publicValue(bits=8)),
         ("idx2", publicValue(bits=64))
@@ -559,11 +572,26 @@ def _spectreSimgr(getProjState, getProjStateArgs, funcname, checks, spec=True, w
     if run: return runSimgr(simgr)
     else: return simgr
 
+
+def _testSimgr(getProjState, getProjStateArgs, funcname, checks, spec=True, window=None, misforwarding=False, run=True, whitelist=None, trace=False, takepath=[]):
+    l.info("Running {} {} speculative execution".format(funcname, "with" if spec else "without"))
+    proj,state = getProjState(*getProjStateArgs)
+    if checks == 'OOB': armSpectreOOBChecks(proj,state)
+    elif checks == 'explicit': armSpectreExplicitChecks(proj,state,whitelist,trace,takepath)
+    else: raise ValueError("Expected `checks` to be either 'OOB' or 'explicit', got {}".format(checks))
+    simgr = getSimgr(proj, state, spec=spec, window=window, misforwarding=misforwarding)
+    if run: return runSimgr(simgr)
+    else: return simgr
+
+    
 """
 All of the below simgr-related functions can take any of the keyword arguments that
     _spectreSimgr() takes, i.e., `spec`, `window`, `misforwarding`, and `run`.
 See docs on _spectreSimgr().
 """
+
+def testcase1Simgr(**kwargs):
+    return _testSimgr(test_case_1, [], "Test case 1", "explicit", **kwargs)
 
 def spectrev1case1Simgr(**kwargs):
     return _spectreSimgr(spectrev1_case_1, [], "Spectre v1 case 1", "explicit", **kwargs)
@@ -709,6 +737,10 @@ def runallKocher(**kwargs):
         {s:kocherSimgr(s, **kwargs) for s in ['01','02','03','05','07','04','06','08','09','10','12','13','14','15']},
         {('11'+s):kocher11Simgr(s, **kwargs) for s in ['gcc','ker','sub']})
 
+
+def runallTest(**kwargs):
+    return { "01" : testcase1Simgr(**kwargs) }
+
 def runallSpectrev1(**kwargs):
     return { "01" : spectrev1case1Simgr(**kwargs),
              "02" : spectrev1case2Simgr(**kwargs),
@@ -736,15 +768,16 @@ def runallForwarding(**kwargs):
              "5" : forwarding5Simgr(**kwargs)
            }
 
-def alltests(kocher=True, spectrev1=True, forwarding=True, tweetnacl=True):
+def alltests(kocher=True, spectrev1=True, forwarding=True, tweetnacl=True, test=True):
     """
     kocher: whether to run Kocher tests
     spectrev1: whether to run the new spectrev1 tests
     forwarding: whether to run forwarding tests
     tweetnacl: whether to run TweetNaCl tests
+    test: whether to run my tests
     """
     from pprint import pprint
-    if not kocher and not spectrev1 and not forwarding and not tweetnacl:
+    if not kocher and not spectrev1 and not forwarding and not tweetnacl and not test:
         raise ValueError("no tests specified")
     logging.getLogger('specvex').setLevel(logging.WARNING)
     logging.getLogger('spectre').setLevel(logging.WARNING)
@@ -757,10 +790,14 @@ def alltests(kocher=True, spectrev1=True, forwarding=True, tweetnacl=True):
         spectrev1_spec = runallSpectrev1(spec=True)
     if forwarding:
         forwarding_notspec = runallForwarding(spec=False)
-        forwarding_forwarding = runallForwarding(spec=True, misforwarding=True)
+        forwarding_forwarding = runallForwarding(spec=True)
+        # forwarding_forwarding = runallForwarding(spec=True, misforwarding=True)
     if tweetnacl:
         tweetnacl_notspec = runallTweetNacl(spec=False)
         tweetnacl_spec = runallTweetNacl(spec=True)
+    if test:
+        test_notspec = runallTest(spec=False)
+        test_spec = runallTest(spec=True)
     def violationDetected(simgr):
         return 'spectre_violation' in simgr.stashes and len(simgr.spectre_violation) > 0
     def kocher_testResult(s):
@@ -773,6 +810,10 @@ def alltests(kocher=True, spectrev1=True, forwarding=True, tweetnacl=True):
             return ("FAIL: detected a violation without speculative execution" if violationDetected(kocher_notspec[s])
                 else "FAIL: no violation detected" if not violationDetected(kocher_spec[s])
                 else "PASS")
+    def testResult(s):
+        return ("FAIL: detected a violation without speculative execution" if violationDetected(test_notspec[s])
+            else "FAIL: no violation detected" if not violationDetected(test_spec[s])
+            else "PASS")
     def spectrev1_testResult(s):
         if s == '08':
             # Test case '08' should not report any violations, because it compiles to a 'cmov' instruction on x86 and is constant-time
@@ -792,6 +833,7 @@ def alltests(kocher=True, spectrev1=True, forwarding=True, tweetnacl=True):
             else "violation detected" if violationDetected(tweetnacl_spec[s])
             else "no violation detected")
     kocher_results = {k:kocher_testResult(k) for k in kocher_spec.keys()} if kocher else None
+    test_results = {k:test_testResult(k) for k in test_spec.keys()} if test else None
     spectrev1_results = {k:spectrev1_testResult(k) for k in spectrev1_spec.keys()} if spectrev1 else None
     forwarding_results = {k:forwarding_testResult(k) for k in forwarding_forwarding.keys()} if forwarding else None
     tweetnacl_results = {k:tweetnacl_testResult(k) for k in tweetnacl_spec.keys()} if tweetnacl else None

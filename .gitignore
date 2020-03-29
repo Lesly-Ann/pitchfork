@@ -5,3 +5,6 @@ pypy
 *~
 angr
 /packaged
+
+myvenv
+angr-git
