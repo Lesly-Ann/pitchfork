@@ -1,0 +1,995 @@
+timeout 1h python pitchfork.py 01
+/opt/pypy3/lib_pypy/cffi/cparser.py:164: UserWarning: Global variable 'r' in cdef(): for consistency with C it should have a storage class specifier (usually 'extern')
+  "(usually 'extern')" % (decl.name,))
+WARNING | 2020-07-19 00:22:54,067 | [34mangr.state_plugins.unicorn_engine[0m | [34mfailed loading "angr_native.so", unicorn support disabled (Cannot load library /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: cannot open shared object file: No such file or directory)[0m
+INFO    | 2020-07-19 00:22:56,936 | [32m__main__[0m | [32mRunning Spectre v4 case 1 with speculative execution[0m
+INFO    | 2020-07-19 00:23:02,365 | [32m__main__[0m | [32m1 active state, at 0x8049d00. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-19 00:23:02,449 | [32m__main__[0m | [32m1 active state, at 0x8049d04. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-19 00:23:02,586 | [32m__main__[0m | [32m3 active states, at ['0x8049d1c', '0x8049d1c', '0x8049d1c']. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-19 00:23:02,990 | [32m__main__[0m | [32m7 active states, at ['0x8049d1e', '0x8049d1e', '0x8049d1e', '0x8049d1e', '0x8049d1e', '0x8049d1e', '0x8049d1e']. Max bbs is 4, max #constraints is 1[0m
+ERROR   | 2020-07-19 00:23:04,089 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d1e
+  Read Address <BV32 secret_35_8{UNINITIALIZED} .. secret_34_8{UNINITIALIZED} .. secret_33_8{UNINITIALIZED} .. secret_32_8{UNINITIALIZED}> (TAINTED)
+  Read Value <BV32 secret_35_8{UNINITIALIZED} .. secret_34_8{UNINITIALIZED} .. secret_33_8{UNINITIALIZED} .. secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool mem_7ffefff0_37_32{UNINITIALIZED} == 0x81050b0>, <Bool secret_35_8{UNINITIALIZED} .. secret_34_8{UNINITIALIZED} .. secret_33_8{UNINITIALIZED} .. secret_32_8{UNINITIALIZED} == 0x81050b0>]
+[0m
+INFO    | 2020-07-19 00:23:04,200 | [32m__main__[0m | [32m15 active states, at 1 unique addresses. Max bbs is 5, max #constraints is 2[0m
+ERROR   | 2020-07-19 00:23:06,297 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE WRITE !!!!!!!!
+  Instruction Address 0x8049d22
+  Write Address <BV32 secret_44_32{UNINITIALIZED}> (TAINTED)
+  Write Value <BV8 0> (untainted)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool mem_7ffeffe8_38_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:08,427 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE WRITE !!!!!!!!
+  Instruction Address 0x8049d22
+  Write Address <BV32 secret_45_32{UNINITIALIZED}> (TAINTED)
+  Write Value <BV8 0> (untainted)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool mem_7ffeffe8_39_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+INFO    | 2020-07-19 00:23:08,662 | [32m__main__[0m | [32m54 active states, at 1 unique addresses; 1 Spectre violation. Max bbs is 6, max #constraints is 4[0m
+ERROR   | 2020-07-19 00:23:08,910 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_49_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool secret_49_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:09,276 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_53_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool secret_53_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:09,733 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_57_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool !((__add__(0x0 .. idx_18_32[3:0], 0x81050a4, 0x1) > (mem_7ffeffec_40_32{UNINITIALIZED} + 0x0 .. idx_18_32[3:0])) && ((0x0 .. idx_18_32[3:0] + 0x81050a4) < __add__(mem_7ffeffec_40_32{UNINITIALIZED}, 0x0 .. idx_18_32[3:0], 0x1)))>, <Bool secret_57_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:09,955 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_61_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool !((__add__(0x0 .. idx_18_32[3:0], 0x81050a4, 0x1) > (mem_7ffeffec_40_32{UNINITIALIZED} + 0x0 .. idx_18_32[3:0])) && ((0x0 .. idx_18_32[3:0] + 0x81050a4) < __add__(mem_7ffeffec_40_32{UNINITIALIZED}, 0x0 .. idx_18_32[3:0], 0x1)))>, <Bool secret_61_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:10,302 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_65_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) < __add__(mem_7ffeffec_40_32{UNINITIALIZED}, 0x0 .. idx_18_32[3:0], 0x1)>, <Bool __add__(0x0 .. idx_18_32[3:0], 0x81050a4, 0x1) > (mem_7ffeffec_40_32{UNINITIALIZED} + 0x0 .. idx_18_32[3:0])>, <Bool secret_65_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:10,683 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_69_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool secret_69_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:11,202 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_73_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool secret_73_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:11,443 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_77_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool !((__add__(0x0 .. idx_18_32[3:0], 0x81050a4, 0x1) > (mem_7ffeffec_41_32{UNINITIALIZED} + 0x0 .. idx_18_32[3:0])) && ((0x0 .. idx_18_32[3:0] + 0x81050a4) < __add__(mem_7ffeffec_41_32{UNINITIALIZED}, 0x0 .. idx_18_32[3:0], 0x1)))>, <Bool secret_77_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:11,682 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_81_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool !((__add__(0x0 .. idx_18_32[3:0], 0x81050a4, 0x1) > (mem_7ffeffec_41_32{UNINITIALIZED} + 0x0 .. idx_18_32[3:0])) && ((0x0 .. idx_18_32[3:0] + 0x81050a4) < __add__(mem_7ffeffec_41_32{UNINITIALIZED}, 0x0 .. idx_18_32[3:0], 0x1)))>, <Bool secret_81_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:12,013 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_85_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) < __add__(mem_7ffeffec_41_32{UNINITIALIZED}, 0x0 .. idx_18_32[3:0], 0x1)>, <Bool __add__(0x0 .. idx_18_32[3:0], 0x81050a4, 0x1) > (mem_7ffeffec_41_32{UNINITIALIZED} + 0x0 .. idx_18_32[3:0])>, <Bool secret_85_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:12,311 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_89_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool mem_7ffeffe8_38_32{UNINITIALIZED} == 0x81050b0>, <Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050a4>, <Bool !((__add__(0x0 .. idx_18_32[3:0], 0x81050a4, 0x1) > secret_44_32{UNINITIALIZED}) && ((0x0 .. idx_18_32[3:0] + 0x81050a4) < (secret_44_32{UNINITIALIZED} + 0x1)))>, <Bool secret_89_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:12,748 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_93_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool mem_7ffeffe8_38_32{UNINITIALIZED} == 0x81050b0>, <Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050a4>, <Bool !((__add__(0x0 .. idx_18_32[3:0], 0x81050a4, 0x1) > secret_44_32{UNINITIALIZED}) && ((0x0 .. idx_18_32[3:0] + 0x81050a4) < (secret_44_32{UNINITIALIZED} + 0x1)))>, <Bool secret_93_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:13,332 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_97_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool secret_97_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:13,663 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_101_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool secret_101_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:13,907 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_105_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool !((__add__(0x0 .. idx_18_32[3:0], 0x81050a4, 0x1) > (mem_7ffeffec_42_32{UNINITIALIZED} + 0x0 .. idx_18_32[3:0])) && ((0x0 .. idx_18_32[3:0] + 0x81050a4) < __add__(mem_7ffeffec_42_32{UNINITIALIZED}, 0x0 .. idx_18_32[3:0], 0x1)))>, <Bool secret_105_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:14,238 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_109_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool !((__add__(0x0 .. idx_18_32[3:0], 0x81050a4, 0x1) > (mem_7ffeffec_42_32{UNINITIALIZED} + 0x0 .. idx_18_32[3:0])) && ((0x0 .. idx_18_32[3:0] + 0x81050a4) < __add__(mem_7ffeffec_42_32{UNINITIALIZED}, 0x0 .. idx_18_32[3:0], 0x1)))>, <Bool secret_109_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:14,726 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_113_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) < __add__(mem_7ffeffec_42_32{UNINITIALIZED}, 0x0 .. idx_18_32[3:0], 0x1)>, <Bool __add__(0x0 .. idx_18_32[3:0], 0x81050a4, 0x1) > (mem_7ffeffec_42_32{UNINITIALIZED} + 0x0 .. idx_18_32[3:0])>, <Bool secret_113_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:15,093 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_117_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool secret_117_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:15,465 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_121_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool secret_121_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:15,769 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_125_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool !((__add__(0x0 .. idx_18_32[3:0], 0x81050a4, 0x1) > (mem_7ffeffec_43_32{UNINITIALIZED} + 0x0 .. idx_18_32[3:0])) && ((0x0 .. idx_18_32[3:0] + 0x81050a4) < __add__(mem_7ffeffec_43_32{UNINITIALIZED}, 0x0 .. idx_18_32[3:0], 0x1)))>, <Bool secret_125_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:16,062 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_129_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool !((__add__(0x0 .. idx_18_32[3:0], 0x81050a4, 0x1) > (mem_7ffeffec_43_32{UNINITIALIZED} + 0x0 .. idx_18_32[3:0])) && ((0x0 .. idx_18_32[3:0] + 0x81050a4) < __add__(mem_7ffeffec_43_32{UNINITIALIZED}, 0x0 .. idx_18_32[3:0], 0x1)))>, <Bool secret_129_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:16,416 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_133_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) < __add__(mem_7ffeffec_43_32{UNINITIALIZED}, 0x0 .. idx_18_32[3:0], 0x1)>, <Bool __add__(0x0 .. idx_18_32[3:0], 0x81050a4, 0x1) > (mem_7ffeffec_43_32{UNINITIALIZED} + 0x0 .. idx_18_32[3:0])>, <Bool secret_133_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:16,642 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_137_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool mem_7ffeffe8_39_32{UNINITIALIZED} == 0x81050b0>, <Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050a4>, <Bool !((__add__(0x0 .. idx_18_32[3:0], 0x81050a4, 0x1) > secret_45_32{UNINITIALIZED}) && ((0x0 .. idx_18_32[3:0] + 0x81050a4) < (secret_45_32{UNINITIALIZED} + 0x1)))>, <Bool secret_137_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:23:17,025 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d33
+  Read Address <BV32 secret_141_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool mem_7ffeffe8_39_32{UNINITIALIZED} == 0x81050b0>, <Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050a4>, <Bool !((__add__(0x0 .. idx_18_32[3:0], 0x81050a4, 0x1) > secret_45_32{UNINITIALIZED}) && ((0x0 .. idx_18_32[3:0] + 0x81050a4) < (secret_45_32{UNINITIALIZED} + 0x1)))>, <Bool secret_141_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+INFO    | 2020-07-19 00:23:17,493 | [32m__main__[0m | [32m92 active states, at 1 unique addresses; 3 Spectre violations. Max bbs is 7, max #constraints is 6[0m
+INFO    | 2020-07-19 00:23:20,702 | [32m__main__[0m | [32m100 active states, at 1 unique addresses; 27 Spectre violations. Max bbs is 8, max #constraints is 7[0m
+INFO    | 2020-07-19 00:23:28,305 | [32m__main__[0m | [32m300 active states, at 1 unique addresses; 27 Spectre violations. Max bbs is 9, max #constraints is 7[0m
+INFO    | 2020-07-19 00:23:34,590 | [32m__main__[0m | [32m300 active states, at 1 unique addresses; 27 Spectre violations. Max bbs is 10, max #constraints is 7[0m
+INFO    | 2020-07-19 00:23:35,957 | [32m__main__[0m | [32mno active states; 300 states finished; 27 Spectre violations[0m
+running time: 33.605550972
+timeout 1h python pitchfork.py 02
+/opt/pypy3/lib_pypy/cffi/cparser.py:164: UserWarning: Global variable 'r' in cdef(): for consistency with C it should have a storage class specifier (usually 'extern')
+  "(usually 'extern')" % (decl.name,))
+WARNING | 2020-07-19 00:23:44,011 | [34mangr.state_plugins.unicorn_engine[0m | [34mfailed loading "angr_native.so", unicorn support disabled (Cannot load library /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: cannot open shared object file: No such file or directory)[0m
+INFO    | 2020-07-19 00:23:46,887 | [32m__main__[0m | [32mRunning Spectre v4 case 2 with speculative execution[0m
+INFO    | 2020-07-19 00:23:52,323 | [32m__main__[0m | [32m1 active state, at 0x8049d50. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-19 00:23:52,414 | [32m__main__[0m | [32m1 active state, at 0x8049d54. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-19 00:23:52,513 | [32m__main__[0m | [32m3 active states, at ['0x8049d57', '0x8049d57', '0x8049d57']. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-19 00:23:55,933 | [32m__main__[0m | [32m3 active states, at ['0x8049d5e', '0x8049d5e', '0x8049d5e']. Max bbs is 4, max #constraints is 2[0m
+ERROR   | 2020-07-19 00:23:58,413 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049d64
+  Read Address <BV32 secret_40_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 131116}
+  constraints were [<Bool (idx_18_32 + 0x80e5084) == 0x81050b0>, <Bool secret_40_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+INFO    | 2020-07-19 00:23:58,473 | [32m__main__[0m | [32m3 active states, at ['0x8049d6a', '0x8049d6a', '0x8049d6a']. Max bbs is 5, max #constraints is 4[0m
+INFO    | 2020-07-19 00:23:58,604 | [32m__main__[0m | [32m2 active states, at ['0x8049d6f', '0x8049d6f']; 1 Spectre violation. Max bbs is 6, max #constraints is 4[0m
+INFO    | 2020-07-19 00:23:59,301 | [32m__main__[0m | [32m6 active states, at ['0x8049d78', '0x8049d78', '0x8049d78', '0x8049d78', '0x8049d78', '0x8049d78']; 1 Spectre violation. Max bbs is 7, max #constraints is 4[0m
+INFO    | 2020-07-19 00:23:59,532 | [32m__main__[0m | [32m6 active states, at ['0xa000030', '0xa000030', '0xa000030', '0xa000030', '0xa000030', '0xa000030']; 1 Spectre violation. Max bbs is 8, max #constraints is 4[0m
+INFO    | 2020-07-19 00:23:59,612 | [32m__main__[0m | [32mno active states; 6 states finished; 1 Spectre violation[0m
+running time: 7.355283152000002
+timeout 1h python pitchfork.py 03
+/opt/pypy3/lib_pypy/cffi/cparser.py:164: UserWarning: Global variable 'r' in cdef(): for consistency with C it should have a storage class specifier (usually 'extern')
+  "(usually 'extern')" % (decl.name,))
+WARNING | 2020-07-19 00:24:07,530 | [34mangr.state_plugins.unicorn_engine[0m | [34mfailed loading "angr_native.so", unicorn support disabled (Cannot load library /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: cannot open shared object file: No such file or directory)[0m
+INFO    | 2020-07-19 00:24:10,421 | [32m__main__[0m | [32mRunning Spectre v4 case 3 with speculative execution[0m
+INFO    | 2020-07-19 00:24:15,760 | [32m__main__[0m | [32m1 active state, at 0x8049d81. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-19 00:24:15,842 | [32m__main__[0m | [32m1 active state, at 0x8049d85. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-19 00:24:17,693 | [32m__main__[0m | [32m1 active state, at 0x8049d8f. Max bbs is 3, max #constraints is 2[0m
+INFO    | 2020-07-19 00:24:19,296 | [32m__main__[0m | [32m1 active state, at 0x8049d9b. Max bbs is 4, max #constraints is 4[0m
+INFO    | 2020-07-19 00:24:19,334 | [32m__main__[0m | [32m1 active state, at 0x8049da0. Max bbs is 5, max #constraints is 4[0m
+INFO    | 2020-07-19 00:24:19,443 | [32m__main__[0m | [32m3 active states, at ['0x8049da9', '0x8049da9', '0x8049da9']. Max bbs is 6, max #constraints is 4[0m
+INFO    | 2020-07-19 00:24:19,534 | [32m__main__[0m | [32m3 active states, at ['0xa000030', '0xa000030', '0xa000030']. Max bbs is 7, max #constraints is 4[0m
+INFO    | 2020-07-19 00:24:19,556 | [32m__main__[0m | [32mno active states; 3 states finished[0m
+running time: 3.8527344570000004
+timeout 1h python pitchfork.py 04
+/opt/pypy3/lib_pypy/cffi/cparser.py:164: UserWarning: Global variable 'r' in cdef(): for consistency with C it should have a storage class specifier (usually 'extern')
+  "(usually 'extern')" % (decl.name,))
+WARNING | 2020-07-19 00:24:27,511 | [34mangr.state_plugins.unicorn_engine[0m | [34mfailed loading "angr_native.so", unicorn support disabled (Cannot load library /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: cannot open shared object file: No such file or directory)[0m
+INFO    | 2020-07-19 00:24:30,416 | [32m__main__[0m | [32mRunning Spectre v4 case 4 with speculative execution[0m
+INFO    | 2020-07-19 00:24:35,916 | [32m__main__[0m | [32m1 active state, at 0x8049db2. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-19 00:24:36,003 | [32m__main__[0m | [32m1 active state, at 0x8049db6. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-19 00:24:36,270 | [32m__main__[0m | [32m3 active states, at ['0x8049dc9', '0x8049dc9', '0x8049dc9']. Max bbs is 3, max #constraints is 1[0m
+ERROR   | 2020-07-19 00:24:36,558 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049dcf
+  Read Address <BV32 secret_40_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool secret_40_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+INFO    | 2020-07-19 00:24:36,793 | [32m__main__[0m | [32m5 active states, at ['0x8049dd5', '0x8049dd5', '0x8049dd5', '0x8049dd5', '0x8049dd5']. Max bbs is 4, max #constraints is 2[0m
+INFO    | 2020-07-19 00:24:37,037 | [32m__main__[0m | [32m4 active states, at ['0x8049dda', '0x8049dda', '0x8049dda', '0x8049dda']; 1 Spectre violation. Max bbs is 5, max #constraints is 2[0m
+INFO    | 2020-07-19 00:24:37,583 | [32m__main__[0m | [32m12 active states, at 1 unique addresses; 1 Spectre violation. Max bbs is 6, max #constraints is 2[0m
+INFO    | 2020-07-19 00:24:38,122 | [32m__main__[0m | [32m12 active states, at 1 unique addresses; 1 Spectre violation. Max bbs is 7, max #constraints is 2[0m
+INFO    | 2020-07-19 00:24:38,225 | [32m__main__[0m | [32mno active states; 12 states finished; 1 Spectre violation[0m
+running time: 2.368559140000002
+timeout 1h python pitchfork.py 05
+/opt/pypy3/lib_pypy/cffi/cparser.py:164: UserWarning: Global variable 'r' in cdef(): for consistency with C it should have a storage class specifier (usually 'extern')
+  "(usually 'extern')" % (decl.name,))
+WARNING | 2020-07-19 00:24:46,190 | [34mangr.state_plugins.unicorn_engine[0m | [34mfailed loading "angr_native.so", unicorn support disabled (Cannot load library /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: cannot open shared object file: No such file or directory)[0m
+INFO    | 2020-07-19 00:24:49,067 | [32m__main__[0m | [32mRunning Spectre v4 case 5 with speculative execution[0m
+INFO    | 2020-07-19 00:24:54,458 | [32m__main__[0m | [32m1 active state, at 0x8049def. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-19 00:24:54,550 | [32m__main__[0m | [32m1 active state, at 0x8049df3. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-19 00:24:54,641 | [32m__main__[0m | [32m3 active states, at ['0x8049e05', '0x8049e05', '0x8049e05']. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-19 00:24:58,093 | [32m__main__[0m | [32m3 active states, at ['0x8049e0b', '0x8049e0b', '0x8049e0b']. Max bbs is 4, max #constraints is 2[0m
+INFO    | 2020-07-19 00:24:58,392 | [32m__main__[0m | [32m9 active states, at 1 unique addresses. Max bbs is 5, max #constraints is 2[0m
+ERROR   | 2020-07-19 00:25:03,463 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049e15
+  Read Address <BV32 secret_43_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool secret_43_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:25:03,650 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049e15
+  Read Address <BV32 secret_46_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool secret_46_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+INFO    | 2020-07-19 00:25:04,319 | [32m__main__[0m | [32m9 active states, at 1 unique addresses. Max bbs is 6, max #constraints is 4[0m
+INFO    | 2020-07-19 00:25:04,597 | [32m__main__[0m | [32m7 active states, at ['0x8049e20', '0x8049e20', '0x8049e20', '0x8049e20', '0x8049e20', '0x8049e20', '0x8049e20']; 2 Spectre violations. Max bbs is 7, max #constraints is 4[0m
+INFO    | 2020-07-19 00:25:05,347 | [32m__main__[0m | [32m21 active states, at 1 unique addresses; 2 Spectre violations. Max bbs is 8, max #constraints is 4[0m
+INFO    | 2020-07-19 00:25:05,875 | [32m__main__[0m | [32m21 active states, at 1 unique addresses; 2 Spectre violations. Max bbs is 9, max #constraints is 4[0m
+INFO    | 2020-07-19 00:25:06,034 | [32m__main__[0m | [32mno active states; 21 states finished; 2 Spectre violations[0m
+running time: 11.659199891
+timeout 1h python pitchfork.py 06
+/opt/pypy3/lib_pypy/cffi/cparser.py:164: UserWarning: Global variable 'r' in cdef(): for consistency with C it should have a storage class specifier (usually 'extern')
+  "(usually 'extern')" % (decl.name,))
+WARNING | 2020-07-19 00:25:13,963 | [34mangr.state_plugins.unicorn_engine[0m | [34mfailed loading "angr_native.so", unicorn support disabled (Cannot load library /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: cannot open shared object file: No such file or directory)[0m
+INFO    | 2020-07-19 00:25:16,819 | [32m__main__[0m | [32mRunning Spectre v4 case 6 with speculative execution[0m
+INFO    | 2020-07-19 00:25:22,096 | [32m__main__[0m | [32m1 active state, at 0x8049e35. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-19 00:25:22,181 | [32m__main__[0m | [32m1 active state, at 0x8049e39. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-19 00:25:22,277 | [32m__main__[0m | [32m3 active states, at ['0x8049e4a', '0x8049e4a', '0x8049e4a']. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-19 00:25:22,437 | [32m__main__[0m | [32m3 active states, at ['0x8049e51', '0x8049e51', '0x8049e51']. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-19 00:25:25,889 | [32m__main__[0m | [32m3 active states, at ['0x8049e57', '0x8049e57', '0x8049e57']. Max bbs is 5, max #constraints is 2[0m
+INFO    | 2020-07-19 00:25:26,251 | [32m__main__[0m | [32m9 active states, at 1 unique addresses. Max bbs is 6, max #constraints is 2[0m
+ERROR   | 2020-07-19 00:25:31,382 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049e61
+  Read Address <BV32 secret_43_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool secret_43_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:25:31,533 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049e61
+  Read Address <BV32 secret_46_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 12}
+  constraints were [<Bool (0x0 .. idx_18_32[3:0] + 0x81050a4) == 0x81050b0>, <Bool secret_46_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+INFO    | 2020-07-19 00:25:32,416 | [32m__main__[0m | [32m9 active states, at 1 unique addresses. Max bbs is 7, max #constraints is 4[0m
+INFO    | 2020-07-19 00:25:32,677 | [32m__main__[0m | [32m7 active states, at ['0x8049e6c', '0x8049e6c', '0x8049e6c', '0x8049e6c', '0x8049e6c', '0x8049e6c', '0x8049e6c']; 2 Spectre violations. Max bbs is 8, max #constraints is 4[0m
+INFO    | 2020-07-19 00:25:33,473 | [32m__main__[0m | [32m21 active states, at 1 unique addresses; 2 Spectre violations. Max bbs is 9, max #constraints is 4[0m
+INFO    | 2020-07-19 00:25:34,020 | [32m__main__[0m | [32m21 active states, at 1 unique addresses; 2 Spectre violations. Max bbs is 10, max #constraints is 4[0m
+INFO    | 2020-07-19 00:25:34,171 | [32m__main__[0m | [32mno active states; 21 states finished; 2 Spectre violations[0m
+running time: 12.162127475
+timeout 1h python pitchfork.py 07
+/opt/pypy3/lib_pypy/cffi/cparser.py:164: UserWarning: Global variable 'r' in cdef(): for consistency with C it should have a storage class specifier (usually 'extern')
+  "(usually 'extern')" % (decl.name,))
+WARNING | 2020-07-19 00:25:42,043 | [34mangr.state_plugins.unicorn_engine[0m | [34mfailed loading "angr_native.so", unicorn support disabled (Cannot load library /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: cannot open shared object file: No such file or directory)[0m
+INFO    | 2020-07-19 00:25:44,933 | [32m__main__[0m | [32mRunning Spectre v4 case 7 with speculative execution[0m
+INFO    | 2020-07-19 00:25:50,327 | [32m__main__[0m | [32m1 active state, at 0x8049e81. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-19 00:25:50,428 | [32m__main__[0m | [32m3 active states, at ['0x8049e8c', '0x8049e8c', '0x8049e8c']. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-19 00:25:50,615 | [32m__main__[0m | [32m3 active states, at ['0x8049e8f', '0x8049e8f', '0x8049e8f']. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-19 00:25:53,896 | [32m__main__[0m | [32m3 active states, at ['0x8049e95', '0x8049e95', '0x8049e95']. Max bbs is 4, max #constraints is 2[0m
+INFO    | 2020-07-19 00:25:54,356 | [32m__main__[0m | [32m9 active states, at 1 unique addresses. Max bbs is 5, max #constraints is 2[0m
+ERROR   | 2020-07-19 00:25:59,331 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049e9f
+  Read Address <BV32 secret_43_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 131116}
+  constraints were [<Bool (idx_18_32 + 0x80e5084) == 0x81050b0>, <Bool secret_43_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:25:59,473 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049e9f
+  Read Address <BV32 secret_46_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 131116}
+  constraints were [<Bool (idx_18_32 + 0x80e5084) == 0x81050b0>, <Bool secret_46_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+INFO    | 2020-07-19 00:26:00,304 | [32m__main__[0m | [32m9 active states, at 1 unique addresses. Max bbs is 6, max #constraints is 4[0m
+INFO    | 2020-07-19 00:26:00,578 | [32m__main__[0m | [32m7 active states, at ['0x8049eaa', '0x8049eaa', '0x8049eaa', '0x8049eaa', '0x8049eaa', '0x8049eaa', '0x8049eaa']; 2 Spectre violations. Max bbs is 7, max #constraints is 4[0m
+INFO    | 2020-07-19 00:26:01,698 | [32m__main__[0m | [32m21 active states, at 1 unique addresses; 2 Spectre violations. Max bbs is 8, max #constraints is 4[0m
+INFO    | 2020-07-19 00:26:02,316 | [32m__main__[0m | [32m21 active states, at 1 unique addresses; 2 Spectre violations. Max bbs is 9, max #constraints is 4[0m
+INFO    | 2020-07-19 00:26:02,484 | [32m__main__[0m | [32mno active states; 21 states finished; 2 Spectre violations[0m
+running time: 12.232602063000002
+timeout 1h python pitchfork.py 08
+/opt/pypy3/lib_pypy/cffi/cparser.py:164: UserWarning: Global variable 'r' in cdef(): for consistency with C it should have a storage class specifier (usually 'extern')
+  "(usually 'extern')" % (decl.name,))
+WARNING | 2020-07-19 00:26:10,396 | [34mangr.state_plugins.unicorn_engine[0m | [34mfailed loading "angr_native.so", unicorn support disabled (Cannot load library /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: cannot open shared object file: No such file or directory)[0m
+INFO    | 2020-07-19 00:26:13,261 | [32m__main__[0m | [32mRunning Spectre v4 case 8 with speculative execution[0m
+INFO    | 2020-07-19 00:26:18,639 | [32m__main__[0m | [32m3 active states, at ['0x8049ec9', '0x8049ec9', '0x8049ec9']. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-19 00:26:18,839 | [32m__main__[0m | [32m3 active states, at ['0x8049ecd', '0x8049ecd', '0x8049ecd']. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-19 00:26:19,170 | [32m__main__[0m | [32m3 active states, at ['0x8049ed3', '0x8049ed3', '0x8049ed3']. Max bbs is 3, max #constraints is 1[0m
+INFO    | 2020-07-19 00:26:19,460 | [32m__main__[0m | [32m9 active states, at 1 unique addresses. Max bbs is 4, max #constraints is 1[0m
+ERROR   | 2020-07-19 00:26:22,074 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049edd
+  Read Address <BV32 secret_43_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 21475492}
+  constraints were [<Bool ((0xc8 * idx_18_32) + 0x80e5084) == 0x81050a4>, <Bool secret_43_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 00:26:22,239 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049edd
+  Read Address <BV32 secret_46_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 21475492}
+  constraints were [<Bool ((0xc8 * idx_18_32) + 0x80e5084) == 0x81050a4>, <Bool secret_46_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+INFO    | 2020-07-19 00:26:23,260 | [32m__main__[0m | [32m9 active states, at 1 unique addresses. Max bbs is 5, max #constraints is 4[0m
+INFO    | 2020-07-19 00:26:23,480 | [32m__main__[0m | [32m7 active states, at ['0x8049ee8', '0x8049ee8', '0x8049ee8', '0x8049ee8', '0x8049ee8', '0x8049ee8', '0x8049ee8']; 2 Spectre violations. Max bbs is 6, max #constraints is 4[0m
+INFO    | 2020-07-19 00:26:24,445 | [32m__main__[0m | [32m21 active states, at 1 unique addresses; 2 Spectre violations. Max bbs is 7, max #constraints is 4[0m
+INFO    | 2020-07-19 00:26:25,013 | [32m__main__[0m | [32m21 active states, at 1 unique addresses; 2 Spectre violations. Max bbs is 8, max #constraints is 4[0m
+INFO    | 2020-07-19 00:26:25,169 | [32m__main__[0m | [32mno active states; 21 states finished; 2 Spectre violations[0m
+running time: 6.6356917499999994
+timeout 1h python pitchfork.py 09
+/opt/pypy3/lib_pypy/cffi/cparser.py:164: UserWarning: Global variable 'r' in cdef(): for consistency with C it should have a storage class specifier (usually 'extern')
+  "(usually 'extern')" % (decl.name,))
+WARNING | 2020-07-19 00:26:33,333 | [34mangr.state_plugins.unicorn_engine[0m | [34mfailed loading "angr_native.so", unicorn support disabled (Cannot load library /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: cannot open shared object file: No such file or directory)[0m
+INFO    | 2020-07-19 00:26:36,196 | [32m__main__[0m | [32mRunning Spectre v4 case 9 with speculative execution[0m
+INFO    | 2020-07-19 00:26:41,506 | [32m__main__[0m | [32m1 active state, at 0x8049efb. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-19 00:26:41,616 | [32m__main__[0m | [32m1 active state, at 0x8049eff. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-19 00:26:41,661 | [32m__main__[0m | [32m1 active state, at 0x8049f26. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-19 00:26:41,712 | [32m__main__[0m | [32m1 active state, at 0x8049f11. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-19 00:26:41,822 | [32m__main__[0m | [32m1 active state, at 0x8049f1a. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-19 00:26:41,919 | [32m__main__[0m | [32m1 active state, at 0x8049f11. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-19 00:26:42,005 | [32m__main__[0m | [32m3 active states, at ['0x8049f1a', '0x8049f1a', '0x8049f1a']. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-19 00:26:42,233 | [32m__main__[0m | [32m3 active states, at ['0x8049f11', '0x8049f11', '0x8049f11']. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-19 00:26:42,459 | [32m__main__[0m | [32m15 active states, at 1 unique addresses. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-19 00:26:43,523 | [32m__main__[0m | [32m15 active states, at 1 unique addresses. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-19 00:26:45,000 | [32m__main__[0m | [32m105 active states, at 1 unique addresses. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-19 00:26:50,619 | [32m__main__[0m | [32m105 active states, at 1 unique addresses. Max bbs is 12, max #constraints is 0[0m
+INFO    | 2020-07-19 00:26:58,704 | [32m__main__[0m | [32m945 active states, at 1 unique addresses. Max bbs is 13, max #constraints is 0[0m
+INFO    | 2020-07-19 00:27:20,508 | [32m__main__[0m | [32m945 active states, at 1 unique addresses. Max bbs is 14, max #constraints is 0[0m
+INFO    | 2020-07-19 00:27:45,096 | [32m__main__[0m | [32m10395 active states, at 1 unique addresses. Max bbs is 15, max #constraints is 0[0m
+INFO    | 2020-07-19 00:29:09,253 | [32m__main__[0m | [32m10395 active states, at 1 unique addresses. Max bbs is 16, max #constraints is 0[0m
+INFO    | 2020-07-19 00:32:18,170 | [32m__main__[0m | [32m135135 active states, at 1 unique addresses. Max bbs is 17, max #constraints is 0[0m
+INFO    | 2020-07-19 00:49:57,132 | [32m__main__[0m | [32m135135 active states, at 1 unique addresses. Max bbs is 18, max #constraints is 0[0m
+make: [Makefile:17: spectrev4] Error 124 (ignored)
+timeout 1h python pitchfork.py 09_bis
+/opt/pypy3/lib_pypy/cffi/cparser.py:164: UserWarning: Global variable 'r' in cdef(): for consistency with C it should have a storage class specifier (usually 'extern')
+  "(usually 'extern')" % (decl.name,))
+WARNING | 2020-07-19 01:26:40,698 | [34mangr.state_plugins.unicorn_engine[0m | [34mfailed loading "angr_native.so", unicorn support disabled (Cannot load library /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: cannot open shared object file: No such file or directory)[0m
+INFO    | 2020-07-19 01:26:43,922 | [32m__main__[0m | [32mRunning Spectre v4 case 9bis with speculative execution[0m
+INFO    | 2020-07-19 01:26:49,370 | [32m__main__[0m | [32m1 active state, at 0x8049f5e. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-19 01:26:49,444 | [32m__main__[0m | [32m1 active state, at 0x8049f62. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-19 01:26:49,492 | [32m__main__[0m | [32m1 active state, at 0x8049f89. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-19 01:26:49,540 | [32m__main__[0m | [32m1 active state, at 0x8049f74. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-19 01:26:49,682 | [32m__main__[0m | [32m1 active state, at 0x8049f7d. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-19 01:26:49,764 | [32m__main__[0m | [32m1 active state, at 0x8049f74. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-19 01:26:49,832 | [32m__main__[0m | [32m3 active states, at ['0x8049f7d', '0x8049f7d', '0x8049f7d']. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-19 01:26:50,039 | [32m__main__[0m | [32m3 active states, at ['0x8049f74', '0x8049f74', '0x8049f74']. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-19 01:26:50,296 | [32m__main__[0m | [32m15 active states, at 1 unique addresses. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-19 01:26:51,338 | [32m__main__[0m | [32m15 active states, at 1 unique addresses. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-19 01:26:52,806 | [32m__main__[0m | [32m105 active states, at 1 unique addresses. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-19 01:26:58,822 | [32m__main__[0m | [32m105 active states, at 1 unique addresses. Max bbs is 12, max #constraints is 0[0m
+INFO    | 2020-07-19 01:27:07,335 | [32m__main__[0m | [32m945 active states, at 1 unique addresses. Max bbs is 13, max #constraints is 0[0m
+INFO    | 2020-07-19 01:27:29,448 | [32m__main__[0m | [32m945 active states, at 1 unique addresses. Max bbs is 14, max #constraints is 0[0m
+INFO    | 2020-07-19 01:27:53,858 | [32m__main__[0m | [32m10395 active states, at 1 unique addresses. Max bbs is 15, max #constraints is 0[0m
+INFO    | 2020-07-19 01:29:17,794 | [32m__main__[0m | [32m10395 active states, at 1 unique addresses. Max bbs is 16, max #constraints is 0[0m
+INFO    | 2020-07-19 01:32:25,074 | [32m__main__[0m | [32m135135 active states, at 1 unique addresses. Max bbs is 17, max #constraints is 0[0m
+INFO    | 2020-07-19 01:49:32,199 | [32m__main__[0m | [32m135135 active states, at 1 unique addresses. Max bbs is 18, max #constraints is 0[0m
+make: [Makefile:18: spectrev4] Error 124 (ignored)
+timeout 1h python pitchfork.py 10
+/opt/pypy3/lib_pypy/cffi/cparser.py:164: UserWarning: Global variable 'r' in cdef(): for consistency with C it should have a storage class specifier (usually 'extern')
+  "(usually 'extern')" % (decl.name,))
+WARNING | 2020-07-19 02:26:48,926 | [34mangr.state_plugins.unicorn_engine[0m | [34mfailed loading "angr_native.so", unicorn support disabled (Cannot load library /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: cannot open shared object file: No such file or directory)[0m
+INFO    | 2020-07-19 02:26:52,152 | [32m__main__[0m | [32mRunning Spectre v4 case 10 with speculative execution[0m
+INFO    | 2020-07-19 02:26:57,551 | [32m__main__[0m | [32m1 active state, at 0x8049fd1. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-19 02:26:57,680 | [32m__main__[0m | [32m1 active state, at 0x8049fb6. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-19 02:26:57,740 | [32m__main__[0m | [32m1 active state, at 0x8049fbe. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-19 02:26:57,916 | [32m__main__[0m | [32m3 active states, at ['0x8049fc2', '0x8049fc2', '0x8049fc2']. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-19 02:26:58,146 | [32m__main__[0m | [32m9 active states, at 1 unique addresses. Max bbs is 5, max #constraints is 0[0m
+WARNING | 2020-07-19 02:27:02,256 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 02:27:02,450 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 02:27:02,623 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 02:27:02,714 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 02:27:02,788 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 02:27:02,892 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 02:27:02,949 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 02:27:03,008 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 02:27:03,064 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+INFO    | 2020-07-19 02:27:03,077 | [32m__main__[0m | [32m18 active states, at 1 unique addresses. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-19 02:27:05,652 | [32m__main__[0m | [32m54 active states, at 1 unique addresses. Max bbs is 7, max #constraints is 1[0m
+ERROR   | 2020-07-19 02:27:16,097 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fe4
+  Read Address <BV32 secret_54_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffeffd8_39_32{UNINITIALIZED} + 0xfffffffc) == 0x81050b0>, <Bool secret_54_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 02:27:17,906 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fe4
+  Read Address <BV32 secret_55_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffeffd8_39_32{UNINITIALIZED} + 0xfffffffc) == 0x81050b0>, <Bool secret_55_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 02:27:25,893 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fe4
+  Read Address <BV32 secret_56_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffeffd8_40_32{UNINITIALIZED} + 0xfffffffc) == 0x81050b0>, <Bool secret_56_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 02:27:27,729 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fe4
+  Read Address <BV32 secret_57_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffeffd8_40_32{UNINITIALIZED} + 0xfffffffc) == 0x81050b0>, <Bool secret_57_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 02:27:34,954 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fe4
+  Read Address <BV32 secret_58_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffeffd8_41_32{UNINITIALIZED} + 0xfffffffc) == 0x81050b0>, <Bool secret_58_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 02:27:36,536 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fe4
+  Read Address <BV32 secret_59_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffeffd8_41_32{UNINITIALIZED} + 0xfffffffc) == 0x81050b0>, <Bool secret_59_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+INFO    | 2020-07-19 02:27:36,761 | [32m__main__[0m | [32m66 active states, at 1 unique addresses. Max bbs is 8, max #constraints is 3[0m
+ERROR   | 2020-07-19 02:27:38,325 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fec
+  Read Address <BV32 secret_63_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffefff0_42_32{UNINITIALIZED} + 0x80e5084) == 0x81050b0>, <Bool secret_63_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 02:27:39,844 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fec
+  Read Address <BV32 secret_67_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffefff0_43_32{UNINITIALIZED} + 0x80e5084) == 0x81050b0>, <Bool secret_67_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 02:27:41,334 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fec
+  Read Address <BV32 secret_71_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffefff0_44_32{UNINITIALIZED} + 0x80e5084) == 0x81050b0>, <Bool secret_71_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 02:27:42,767 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fec
+  Read Address <BV32 secret_75_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffefff0_45_32{UNINITIALIZED} + 0x80e5084) == 0x81050b0>, <Bool secret_75_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 02:27:46,830 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fec
+  Read Address <BV32 secret_79_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffefff0_46_32{UNINITIALIZED} + 0x80e5084) == 0x81050b0>, <Bool secret_79_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 02:27:48,288 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fec
+  Read Address <BV32 secret_83_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffefff0_47_32{UNINITIALIZED} + 0x80e5084) == 0x81050b0>, <Bool secret_83_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 02:27:49,700 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fec
+  Read Address <BV32 secret_87_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffefff0_48_32{UNINITIALIZED} + 0x80e5084) == 0x81050b0>, <Bool secret_87_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 02:27:50,951 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fec
+  Read Address <BV32 secret_91_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffefff0_49_32{UNINITIALIZED} + 0x80e5084) == 0x81050b0>, <Bool secret_91_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 02:27:54,921 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fec
+  Read Address <BV32 secret_95_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffefff0_50_32{UNINITIALIZED} + 0x80e5084) == 0x81050b0>, <Bool secret_95_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 02:27:56,337 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fec
+  Read Address <BV32 secret_99_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffefff0_51_32{UNINITIALIZED} + 0x80e5084) == 0x81050b0>, <Bool secret_99_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 02:27:57,736 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fec
+  Read Address <BV32 secret_103_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffefff0_52_32{UNINITIALIZED} + 0x80e5084) == 0x81050b0>, <Bool secret_103_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 02:27:58,976 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x8049fec
+  Read Address <BV32 secret_107_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool (mem_7ffefff0_53_32{UNINITIALIZED} + 0x80e5084) == 0x81050b0>, <Bool secret_107_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+INFO    | 2020-07-19 02:28:01,655 | [32m__main__[0m | [32m60 active states, at 1 unique addresses; 6 Spectre violations. Max bbs is 9, max #constraints is 5[0m
+INFO    | 2020-07-19 02:28:02,760 | [32m__main__[0m | [32m48 active states, at 1 unique addresses; 18 Spectre violations. Max bbs is 10, max #constraints is 5[0m
+INFO    | 2020-07-19 02:28:07,632 | [32m__main__[0m | [32m96 active states, at 1 unique addresses; 18 Spectre violations. Max bbs is 11, max #constraints is 4[0m
+INFO    | 2020-07-19 02:28:11,846 | [32m__main__[0m | [32m96 active states, at 2 unique addresses; 18 Spectre violations. Max bbs is 12, max #constraints is 4[0m
+INFO    | 2020-07-19 02:28:16,157 | [32m__main__[0m | [32m24 active states, at 1 unique addresses; 72 states finished; 18 Spectre violations. Max bbs is 13, max #constraints is 3[0m
+INFO    | 2020-07-19 02:28:19,776 | [32m__main__[0m | [32m72 active states, at 1 unique addresses; 72 states finished; 18 Spectre violations. Max bbs is 14, max #constraints is 3[0m
+INFO    | 2020-07-19 02:28:31,261 | [32m__main__[0m | [32m360 active states, at 1 unique addresses; 72 states finished; 18 Spectre violations. Max bbs is 15, max #constraints is 3[0m
+INFO    | 2020-07-19 02:29:22,757 | [32m__main__[0m | [32m2520 active states, at 1 unique addresses; 72 states finished; 18 Spectre violations. Max bbs is 16, max #constraints is 3[0m
+INFO    | 2020-07-19 02:34:00,469 | [32m__main__[0m | [32m22680 active states, at 1 unique addresses; 72 states finished; 18 Spectre violations. Max bbs is 17, max #constraints is 3[0m
+make: [Makefile:19: spectrev4] Terminated (ignored)
+timeout 1h python pitchfork.py 11
+/opt/pypy3/lib_pypy/cffi/cparser.py:164: UserWarning: Global variable 'r' in cdef(): for consistency with C it should have a storage class specifier (usually 'extern')
+  "(usually 'extern')" % (decl.name,))
+WARNING | 2020-07-19 03:07:50,546 | [34mangr.state_plugins.unicorn_engine[0m | [34mfailed loading "angr_native.so", unicorn support disabled (Cannot load library /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: cannot open shared object file: No such file or directory)[0m
+INFO    | 2020-07-19 03:07:53,762 | [32m__main__[0m | [32mRunning Spectre v4 case 11 with speculative execution[0m
+INFO    | 2020-07-19 03:07:59,266 | [32m__main__[0m | [32m1 active state, at 0x804a02b. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-19 03:07:59,404 | [32m__main__[0m | [32m1 active state, at 0x804a001. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-19 03:07:59,480 | [32m__main__[0m | [32m1 active state, at 0x804a00c. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-19 03:07:59,626 | [32m__main__[0m | [32m3 active states, at ['0x804a010', '0x804a010', '0x804a010']. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-19 03:08:04,455 | [32m__main__[0m | [32m3 active states, at ['0x804a01a', '0x804a01a', '0x804a01a']. Max bbs is 5, max #constraints is 2[0m
+INFO    | 2020-07-19 03:08:04,719 | [32m__main__[0m | [32m9 active states, at 1 unique addresses. Max bbs is 6, max #constraints is 2[0m
+INFO    | 2020-07-19 03:08:05,360 | [32m__main__[0m | [32m27 active states, at 1 unique addresses. Max bbs is 7, max #constraints is 2[0m
+WARNING | 2020-07-19 03:08:08,084 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:08,241 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:08,350 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:08,492 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:08,643 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:08,750 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:08,835 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:08,891 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:08,958 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:09,029 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:09,098 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:09,176 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:09,233 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:09,310 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:09,413 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:09,583 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:09,701 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:09,767 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:09,849 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:10,120 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:10,171 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:10,225 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:10,276 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:10,333 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:10,382 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:10,430 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:08:10,497 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffdc_37_32{UNINITIALIZED}>[0m
+INFO    | 2020-07-19 03:08:10,522 | [32m__main__[0m | [32m54 active states, at 1 unique addresses. Max bbs is 8, max #constraints is 2[0m
+INFO    | 2020-07-19 03:08:17,630 | [32m__main__[0m | [32m162 active states, at 1 unique addresses. Max bbs is 9, max #constraints is 3[0m
+ERROR   | 2020-07-19 03:08:24,672 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_107_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_42_32{UNINITIALIZED} + 0xffffffff) == 0x81050b3>, <Bool secret_107_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:08:25,770 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_110_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_42_32{UNINITIALIZED} + 0xffffffff) == 0x81050b3>, <Bool secret_110_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:08:31,569 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_113_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_43_32{UNINITIALIZED} + 0xffffffff) == 0x81050b3>, <Bool secret_113_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:08:32,469 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_116_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_43_32{UNINITIALIZED} + 0xffffffff) == 0x81050b3>, <Bool secret_116_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:08:39,078 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_119_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_44_32{UNINITIALIZED} + 0xffffffff) == 0x81050af>, <Bool secret_119_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:08:40,297 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_122_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_44_32{UNINITIALIZED} + 0xffffffff) == 0x81050af>, <Bool secret_122_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:08:45,745 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_125_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_45_32{UNINITIALIZED} + 0xffffffff) == 0x81050b3>, <Bool secret_125_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:08:46,692 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_128_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_45_32{UNINITIALIZED} + 0xffffffff) == 0x81050b3>, <Bool secret_128_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:08:51,629 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_131_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_46_32{UNINITIALIZED} + 0xffffffff) == 0x81050af>, <Bool secret_131_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:08:52,436 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_134_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_46_32{UNINITIALIZED} + 0xffffffff) == 0x81050af>, <Bool secret_134_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:08:58,456 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_137_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_47_32{UNINITIALIZED} + 0xffffffff) == 0x81050af>, <Bool secret_137_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:08:59,626 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_140_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. idx_18_32[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_47_32{UNINITIALIZED} + 0xffffffff) == 0x81050b1>, <Bool secret_140_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:09:04,672 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_143_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_48_32{UNINITIALIZED} + 0xffffffff) == 0x81050b3>, <Bool secret_143_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:09:05,510 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_146_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_48_32{UNINITIALIZED} + 0xffffffff) == 0x81050af>, <Bool secret_146_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:09:10,377 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_149_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_49_32{UNINITIALIZED} + 0xffffffff) == 0x81050b3>, <Bool secret_149_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:09:11,342 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_152_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_49_32{UNINITIALIZED} + 0xffffffff) == 0x81050b3>, <Bool secret_152_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:09:16,955 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_155_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_50_32{UNINITIALIZED} + 0xffffffff) == 0x81050af>, <Bool secret_155_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+ERROR   | 2020-07-19 03:09:18,119 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x804a03d
+  Read Address <BV32 secret_158_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_32_8{UNINITIALIZED}> (TAINTED)
+  Path 
+  A set of argument values meeting constraints is: {'idx': 0}
+  constraints were [<Bool True>, <Bool Or(((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5084), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5086), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5090), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5092), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5093), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5088), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5089), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5085), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5087), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508f), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508e), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508c), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508d), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e5091), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508a), ((0x0 .. mem_7ffeffe0_38_32{UNINITIALIZED}[3:0] + 0x80e5084) == 0x80e508b))>, <Bool (mem_7ffeffd8_50_32{UNINITIALIZED} + 0xffffffff) == 0x81050b3>, <Bool secret_158_32{UNINITIALIZED} == 0x81050b0>]
+[0m
+INFO    | 2020-07-19 03:09:18,262 | [32m__main__[0m | [32m162 active states, at 1 unique addresses. Max bbs is 10, max #constraints is 5[0m
+INFO    | 2020-07-19 03:09:22,550 | [32m__main__[0m | [32m144 active states, at 1 unique addresses; 18 Spectre violations. Max bbs is 11, max #constraints is 5[0m
+INFO    | 2020-07-19 03:09:32,559 | [32m__main__[0m | [32m360 active states, at 1 unique addresses; 18 Spectre violations. Max bbs is 12, max #constraints is 5[0m
+INFO    | 2020-07-19 03:09:41,036 | [32m__main__[0m | [32m360 active states, at 3 unique addresses; 18 Spectre violations. Max bbs is 13, max #constraints is 4[0m
+INFO    | 2020-07-19 03:09:47,360 | [32m__main__[0m | [32m34 active states, at 1 unique addresses; 324 states finished; 18 Spectre violations. Max bbs is 14, max #constraints is 4[0m
+INFO    | 2020-07-19 03:09:51,762 | [32m__main__[0m | [32m102 active states, at 1 unique addresses; 324 states finished; 18 Spectre violations. Max bbs is 15, max #constraints is 4[0m
+INFO    | 2020-07-19 03:10:06,531 | [32m__main__[0m | [32m510 active states, at 1 unique addresses; 324 states finished; 18 Spectre violations. Max bbs is 16, max #constraints is 4[0m
+INFO    | 2020-07-19 03:11:11,922 | [32m__main__[0m | [32m3570 active states, at 1 unique addresses; 324 states finished; 18 Spectre violations. Max bbs is 17, max #constraints is 4[0m
+INFO    | 2020-07-19 03:17:32,948 | [32m__main__[0m | [32m32130 active states, at 1 unique addresses; 324 states finished; 18 Spectre violations. Max bbs is 18, max #constraints is 4[0m
+make: [Makefile:20: spectrev4] Terminated (ignored)
+timeout 1h python pitchfork.py 12
+/opt/pypy3/lib_pypy/cffi/cparser.py:164: UserWarning: Global variable 'r' in cdef(): for consistency with C it should have a storage class specifier (usually 'extern')
+  "(usually 'extern')" % (decl.name,))
+WARNING | 2020-07-19 03:49:16,974 | [34mangr.state_plugins.unicorn_engine[0m | [34mfailed loading "angr_native.so", unicorn support disabled (Cannot load library /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: cannot open shared object file: No such file or directory)[0m
+INFO    | 2020-07-19 03:49:20,216 | [32m__main__[0m | [32mRunning Spectre v4 case 12 with speculative execution[0m
+INFO    | 2020-07-19 03:49:25,685 | [32m__main__[0m | [32m1 active state, at 0x804a06a. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-19 03:49:25,785 | [32m__main__[0m | [32m1 active state, at 0x8049fb6. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-19 03:49:25,850 | [32m__main__[0m | [32m1 active state, at 0x8049fbe. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-19 03:49:26,014 | [32m__main__[0m | [32m3 active states, at ['0x8049fc2', '0x8049fc2', '0x8049fc2']. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-19 03:49:26,219 | [32m__main__[0m | [32m9 active states, at 1 unique addresses. Max bbs is 5, max #constraints is 0[0m
+WARNING | 2020-07-19 03:49:30,511 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:49:30,685 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:49:30,820 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:49:30,887 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:49:30,965 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:49:31,044 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:49:31,097 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:49:31,155 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 03:49:31,214 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+INFO    | 2020-07-19 03:49:31,229 | [32m__main__[0m | [32m18 active states, at 1 unique addresses. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-19 03:49:46,567 | [32m__main__[0m | [32m18 active states, at 1 unique addresses. Max bbs is 7, max #constraints is 2[0m
+INFO    | 2020-07-19 03:49:57,989 | [32m__main__[0m | [32m18 active states, at 1 unique addresses. Max bbs is 8, max #constraints is 4[0m
+INFO    | 2020-07-19 03:49:58,798 | [32m__main__[0m | [32m18 active states, at 1 unique addresses. Max bbs is 9, max #constraints is 4[0m
+INFO    | 2020-07-19 03:50:00,835 | [32m__main__[0m | [32m42 active states, at 1 unique addresses. Max bbs is 10, max #constraints is 5[0m
+INFO    | 2020-07-19 03:50:02,663 | [32m__main__[0m | [32m42 active states, at 2 unique addresses. Max bbs is 11, max #constraints is 4[0m
+INFO    | 2020-07-19 03:50:03,983 | [32m__main__[0m | [32m6 active states, at ['0x81050a6', '0x81050a6', '0x81050a6', '0x81050a6', '0x81050a6', '0x81050a6']; 36 states finished. Max bbs is 12, max #constraints is 3[0m
+INFO    | 2020-07-19 03:50:05,106 | [32m__main__[0m | [32m18 active states, at 1 unique addresses; 36 states finished. Max bbs is 13, max #constraints is 3[0m
+INFO    | 2020-07-19 03:50:08,343 | [32m__main__[0m | [32m90 active states, at 1 unique addresses; 36 states finished. Max bbs is 14, max #constraints is 3[0m
+INFO    | 2020-07-19 03:50:24,709 | [32m__main__[0m | [32m630 active states, at 1 unique addresses; 36 states finished. Max bbs is 15, max #constraints is 3[0m
+INFO    | 2020-07-19 03:51:48,495 | [32m__main__[0m | [32m5670 active states, at 1 unique addresses; 36 states finished. Max bbs is 16, max #constraints is 3[0m
+INFO    | 2020-07-19 04:01:34,986 | [32m__main__[0m | [32m62370 active states, at 1 unique addresses; 36 states finished. Max bbs is 17, max #constraints is 3[0m
+make: [Makefile:21: spectrev4] Terminated (ignored)
+timeout 1h python pitchfork.py 13
+/opt/pypy3/lib_pypy/cffi/cparser.py:164: UserWarning: Global variable 'r' in cdef(): for consistency with C it should have a storage class specifier (usually 'extern')
+  "(usually 'extern')" % (decl.name,))
+WARNING | 2020-07-19 04:27:07,792 | [34mangr.state_plugins.unicorn_engine[0m | [34mfailed loading "angr_native.so", unicorn support disabled (Cannot load library /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: cannot open shared object file: No such file or directory)[0m
+INFO    | 2020-07-19 04:27:12,021 | [32m__main__[0m | [32mRunning Spectre v4 case 13 with speculative execution[0m
+INFO    | 2020-07-19 04:27:17,496 | [32m__main__[0m | [32m1 active state, at 0x804a0be. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-19 04:27:17,608 | [32m__main__[0m | [32m1 active state, at 0x804a001. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-19 04:27:17,694 | [32m__main__[0m | [32m1 active state, at 0x804a00c. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-19 04:27:17,862 | [32m__main__[0m | [32m3 active states, at ['0x804a010', '0x804a010', '0x804a010']. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-19 04:27:22,644 | [32m__main__[0m | [32m3 active states, at ['0x804a01a', '0x804a01a', '0x804a01a']. Max bbs is 5, max #constraints is 2[0m
+INFO    | 2020-07-19 04:27:22,938 | [32m__main__[0m | [32m9 active states, at 1 unique addresses. Max bbs is 6, max #constraints is 2[0m
+INFO    | 2020-07-19 04:27:23,557 | [32m__main__[0m | [32m27 active states, at 1 unique addresses. Max bbs is 7, max #constraints is 2[0m
+WARNING | 2020-07-19 04:27:26,254 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:26,623 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:26,745 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:26,811 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:26,904 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:26,973 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:27,048 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:27,108 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:27,163 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:27,238 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:27,327 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:27,439 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:27,497 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:27,552 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:27,602 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:27,700 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:27,751 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:27,807 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:27,883 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:27,937 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:27,990 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:28,050 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:28,103 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:28,152 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:28,205 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:28,255 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+WARNING | 2020-07-19 04:27:28,371 | [34mangr.engines.successors[0m | [34mExit state has over 256 possible solutions. Likely unconstrained; skipping. <BV32 mem_7ffeffec_37_32{UNINITIALIZED}>[0m
+INFO    | 2020-07-19 04:27:28,397 | [32m__main__[0m | [32m54 active states, at 1 unique addresses. Max bbs is 8, max #constraints is 2[0m
+INFO    | 2020-07-19 04:27:51,694 | [32m__main__[0m | [32m54 active states, at 1 unique addresses. Max bbs is 9, max #constraints is 4[0m
+INFO    | 2020-07-19 04:27:53,140 | [32m__main__[0m | [32m54 active states, at 1 unique addresses. Max bbs is 10, max #constraints is 4[0m
+INFO    | 2020-07-19 04:27:58,734 | [32m__main__[0m | [32m126 active states, at 1 unique addresses. Max bbs is 11, max #constraints is 5[0m
+INFO    | 2020-07-19 04:28:04,062 | [32m__main__[0m | [32m126 active states, at 2 unique addresses. Max bbs is 12, max #constraints is 4[0m
+INFO    | 2020-07-19 04:28:07,393 | [32m__main__[0m | [32m18 active states, at 1 unique addresses; 108 states finished. Max bbs is 13, max #constraints is 4[0m
+INFO    | 2020-07-19 04:28:09,989 | [32m__main__[0m | [32m54 active states, at 1 unique addresses; 108 states finished. Max bbs is 14, max #constraints is 4[0m
+INFO    | 2020-07-19 04:28:18,573 | [32m__main__[0m | [32m270 active states, at 1 unique addresses; 108 states finished. Max bbs is 15, max #constraints is 4[0m
+INFO    | 2020-07-19 04:28:57,827 | [32m__main__[0m | [32m1890 active states, at 1 unique addresses; 108 states finished. Max bbs is 16, max #constraints is 4[0m
+INFO    | 2020-07-19 04:32:27,911 | [32m__main__[0m | [32m17010 active states, at 1 unique addresses; 108 states finished. Max bbs is 17, max #constraints is 4[0m
+INFO    | 2020-07-19 09:30:26,883 | [32m__main__[0m | [32m187110 active states, at 1 unique addresses; 108 states finished. Max bbs is 18, max #constraints is 4[0m
+make: [Makefile:22: spectrev4] Terminated (ignored)

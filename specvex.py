@@ -11,6 +11,9 @@ import collections
 import logging
 l = logging.getLogger(name=__name__)
 
+# My dirty fix
+global_misforwarding = False
+
 from utils import isDefinitelyEqual_Solver, isDefinitelyNotEqual_Solver, describeAst
 
 def makeSpeculative(proj, state, window=250, misforwarding=False):
@@ -19,6 +22,8 @@ def makeSpeculative(proj, state, window=250, misforwarding=False):
     misforwarding: whether to enable misforwarding features, i.e., speculatively
         missing a forward from an inflight store.
     """
+    global global_misforwarding
+    global_misforwarding = misforwarding
     proj.engines.register_plugin('specvex', SimEngineSpecVEX())
     proj.engines.order = ['specvex' if x=='vex' else x for x in proj.engines.order]  # replace 'vex' with 'specvex'
     if proj.engines.has_plugin('vex'): proj.engines.release_plugin('vex')
@@ -63,6 +68,7 @@ class SimEngineSpecVEX(angr.SimEngineVEX):
         An override of the _handle_statement method in SimEngineVEX base class.
         Much code copied from there; see SimEngineVEX class for more information/docs.
         """
+        global global_misforwarding
 
         if type(stmt) == pyvex.IRStmt.IMark:
             ins_addr = stmt.addr + stmt.delta
@@ -129,19 +135,33 @@ class SimEngineSpecVEX(angr.SimEngineVEX):
                 exit_state = state.copy()
                 cont_state = state
 
-            if exit_state is not None:
-                exit_state.spec.path.append('1')
-                if not state.solver.is_true(branchcond): exit_state.spec.conditionals.append(branchcond)  # don't bother adding a deferred 'True' constraint
-                successors.add_successor(exit_state, target, guard, jumpkind, add_guard=False,
-                                        exit_stmt_idx=state.scratch.stmt_idx, exit_ins_addr=state.scratch.ins_addr)
-            if cont_state is not None:
-                cont_state.spec.path.append('0')
-                if not state.solver.is_true(notbranchcond): cont_state.spec.conditionals.append(notbranchcond)  # don't bother adding a deferred 'True' constraint
-                return True
+
+                
+            if global_misforwarding == False:
+                if exit_state is not None:
+                    exit_state.spec.path.append('1')
+                    if not state.solver.is_true(branchcond): exit_state.spec.conditionals.append(branchcond)  # don't bother adding a deferred 'True' constraint
+                    successors.add_successor(exit_state, target, guard, jumpkind, add_guard=False,
+                                             exit_stmt_idx=state.scratch.stmt_idx, exit_ins_addr=state.scratch.ins_addr)
+                if cont_state is not None:
+                    cont_state.spec.path.append('0')
+                    if not state.solver.is_true(notbranchcond): cont_state.spec.conditionals.append(notbranchcond)  # don't bother adding a deferred 'True' constraint
+                    return True
+                else:
+                    return False
+
             else:
-                return False
+                if exit_state is not None:
+                    successors.add_successor(exit_state, target, guard, jumpkind,
+                                             exit_stmt_idx=state.scratch.stmt_idx, exit_ins_addr=state.scratch.ins_addr)
+                if cont_state is None:
+                    return False
 
-
+                # Do our bookkeeping on the continuing state
+                cont_condition = claripy.Not(guard)
+                cont_state.add_constraints(cont_condition)
+                cont_state.scratch.guard = claripy.And(cont_state.scratch.guard, cont_condition)
+                
             # We don't add the guard for the exit_state (add_guard=False).
             # Unfortunately, the call to add the 'default' successor at the end of an irsb
             # (line 313 in vex/engine.py as of this writing) leaves add_guard as default (True).

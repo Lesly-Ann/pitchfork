@@ -1,0 +1,522 @@
+timeout 1h python pitchfork.py spectrev1
+/opt/pypy3/lib_pypy/cffi/cparser.py:164: UserWarning: Global variable 'r' in cdef(): for consistency with C it should have a storage class specifier (usually 'extern')
+  "(usually 'extern')" % (decl.name,))
+WARNING | 2020-07-20 14:43:45,990 | [34mangr.state_plugins.unicorn_engine[0m | [34mfailed loading "angr_native.so", unicorn support disabled (Cannot load library /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: /home/lesly/Work/Hyperproperties/tools/pitchfork/angr/lib/angr_native.so: cannot open shared object file: No such file or directory)[0m
+INFO    | 2020-07-20 14:43:49,210 | [32m__main__[0m | [32mRunning Spectre v1 case 1 with speculative execution[0m
+WARNING | 2020-07-20 14:43:52,851 | [36mcle.loader[0m | [36mThe main binary is a position-independent executable. It is being loaded with a base address of 0x400000.[0m
+INFO    | 2020-07-20 14:43:55,053 | [32m__main__[0m | [32m1 active state, at 0x401b32. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-20 14:43:55,118 | [32m__main__[0m | [32m1 active state, at 0x401b35. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-20 14:43:55,150 | [32m__main__[0m | [32m1 active state, at 0x401199. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-20 14:43:55,247 | [32m__main__[0m | [32m1 active state, at 0x4011a1. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-20 14:43:55,309 | [32m__main__[0m | [32m1 active state, at 0x4011a7. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-20 14:43:55,388 | [32m__main__[0m | [32m1 active state, at 0x4011b0. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-20 14:43:55,436 | [32m__main__[0m | [32m1 active state, at 0x4011b6. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-20 14:43:55,493 | [32m__main__[0m | [32m1 active state, at 0x4011b9. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-20 14:43:55,583 | [32m__main__[0m | [32m1 active state, at 0x4011bc. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-20 14:43:55,897 | [32m__main__[0m | [32m2 active states, at ['0x4011c0', '0x4011e8']. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-20 14:43:56,045 | [32m__main__[0m | [32m2 active states, at ['0x4011c9', '0x4011ed']. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-20 14:43:56,346 | [32m__main__[0m | [32m2 active states, at ['0x4011cd', '0x4011ee']. Max bbs is 12, max #constraints is 1[0m
+ERROR   | 2020-07-20 14:43:56,555 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x4011d3
+  Read Address <BV32 secret_30_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_7_8{UNINITIALIZED}> (TAINTED)
+  Path 1
+  A set of argument values meeting constraints is: {'idx': 131104}
+  constraints were [<Bool (idx_5_32 + 0x404048) == 0x424068>, <Bool secret_30_32{UNINITIALIZED} == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:43:56,635 | [32m__main__[0m | [32m2 active states, at ['0x4011da', '0x4000030']. Max bbs is 13, max #constraints is 2[0m
+INFO    | 2020-07-20 14:43:56,682 | [32m__main__[0m | [32mno active states; 1 state finished; 1 Spectre violation[0m
+INFO    | 2020-07-20 14:43:56,683 | [32m__main__[0m | [32mRunning Spectre v1 case 2 with speculative execution[0m
+WARNING | 2020-07-20 14:43:58,543 | [36mcle.loader[0m | [36mThe main binary is a position-independent executable. It is being loaded with a base address of 0x400000.[0m
+INFO    | 2020-07-20 14:43:59,790 | [32m__main__[0m | [32m1 active state, at 0x401b36. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-20 14:43:59,815 | [32m__main__[0m | [32m1 active state, at 0x401b39. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-20 14:43:59,836 | [32m__main__[0m | [32m1 active state, at 0x401230. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-20 14:43:59,895 | [32m__main__[0m | [32m1 active state, at 0x401239. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-20 14:43:59,938 | [32m__main__[0m | [32m1 active state, at 0x40123f. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:00,016 | [32m__main__[0m | [32m1 active state, at 0x401248. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:00,054 | [32m__main__[0m | [32m1 active state, at 0x40124e. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:00,084 | [32m__main__[0m | [32m1 active state, at 0x401251. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:00,157 | [32m__main__[0m | [32m1 active state, at 0x401254. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:00,434 | [32m__main__[0m | [32m2 active states, at ['0x401258', '0x401271']. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:00,501 | [32m__main__[0m | [32m2 active states, at ['0x401261', '0x401275']. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:00,673 | [32m__main__[0m | [32m2 active states, at ['0x401265', '0x401276']. Max bbs is 12, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:00,733 | [32m__main__[0m | [32m2 active states, at ['0x4011ef', '0x4000030']. Max bbs is 13, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:00,787 | [32m__main__[0m | [32m1 active state, at 0x401b32; 1 state finished. Max bbs is 14, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:00,807 | [32m__main__[0m | [32m1 active state, at 0x401b35; 1 state finished. Max bbs is 15, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:00,832 | [32m__main__[0m | [32m1 active state, at 0x4011fa; 1 state finished. Max bbs is 16, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:00,876 | [32m__main__[0m | [32m1 active state, at 0x401202; 1 state finished. Max bbs is 17, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:00,950 | [32m__main__[0m | [32m1 active state, at 0x401209; 1 state finished. Max bbs is 18, max #constraints is 1[0m
+ERROR   | 2020-07-20 14:44:01,113 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x40120c
+  Read Address <BV32 secret_62_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_38_8{UNINITIALIZED}> (TAINTED)
+  Path 1
+  A set of argument values meeting constraints is: {'idx': 131104}
+  constraints were [<Bool (idx_36_32 + 0x404048) == 0x424068>, <Bool secret_62_32{UNINITIALIZED} == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:44:01,123 | [32m__main__[0m | [32m1 active state, at 0x401213; 1 state finished. Max bbs is 19, max #constraints is 2[0m
+INFO    | 2020-07-20 14:44:01,124 | [32m__main__[0m | [32mno active states; 1 state finished; 1 Spectre violation[0m
+INFO    | 2020-07-20 14:44:01,124 | [32m__main__[0m | [32mRunning Spectre v1 case 3 with speculative execution[0m
+WARNING | 2020-07-20 14:44:02,775 | [36mcle.loader[0m | [36mThe main binary is a position-independent executable. It is being loaded with a base address of 0x400000.[0m
+INFO    | 2020-07-20 14:44:03,693 | [32m__main__[0m | [32m1 active state, at 0x401b36. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:03,715 | [32m__main__[0m | [32m1 active state, at 0x401b39. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:03,737 | [32m__main__[0m | [32m1 active state, at 0x4012b8. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:03,785 | [32m__main__[0m | [32m1 active state, at 0x4012c1. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:03,832 | [32m__main__[0m | [32m1 active state, at 0x4012c7. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:03,913 | [32m__main__[0m | [32m1 active state, at 0x4012d0. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:03,943 | [32m__main__[0m | [32m1 active state, at 0x4012d6. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:03,973 | [32m__main__[0m | [32m1 active state, at 0x4012d9. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:04,005 | [32m__main__[0m | [32m1 active state, at 0x4012dc. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:04,318 | [32m__main__[0m | [32m2 active states, at ['0x4012e0', '0x4012f9']. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:04,384 | [32m__main__[0m | [32m2 active states, at ['0x4012e9', '0x4012fd']. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:04,522 | [32m__main__[0m | [32m2 active states, at ['0x4012ed', '0x4012fe']. Max bbs is 12, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:04,574 | [32m__main__[0m | [32m2 active states, at ['0x401277', '0x4000030']. Max bbs is 13, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:04,619 | [32m__main__[0m | [32m1 active state, at 0x401b32; 1 state finished. Max bbs is 14, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:04,638 | [32m__main__[0m | [32m1 active state, at 0x401b35; 1 state finished. Max bbs is 15, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:04,654 | [32m__main__[0m | [32m1 active state, at 0x401282; 1 state finished. Max bbs is 16, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:04,696 | [32m__main__[0m | [32m1 active state, at 0x40128a; 1 state finished. Max bbs is 17, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:04,746 | [32m__main__[0m | [32m1 active state, at 0x401291; 1 state finished. Max bbs is 18, max #constraints is 1[0m
+ERROR   | 2020-07-20 14:44:04,862 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x401294
+  Read Address <BV32 secret_94_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_70_8{UNINITIALIZED}> (TAINTED)
+  Path 1
+  A set of argument values meeting constraints is: {'idx': 131104}
+  constraints were [<Bool (idx_68_32 + 0x404048) == 0x424068>, <Bool secret_94_32{UNINITIALIZED} == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:44:04,871 | [32m__main__[0m | [32m1 active state, at 0x40129b; 1 state finished. Max bbs is 19, max #constraints is 2[0m
+INFO    | 2020-07-20 14:44:04,871 | [32m__main__[0m | [32mno active states; 1 state finished; 1 Spectre violation[0m
+INFO    | 2020-07-20 14:44:04,872 | [32m__main__[0m | [32mRunning Spectre v1 case 4 with speculative execution[0m
+WARNING | 2020-07-20 14:44:06,075 | [36mcle.loader[0m | [36mThe main binary is a position-independent executable. It is being loaded with a base address of 0x400000.[0m
+INFO    | 2020-07-20 14:44:06,921 | [32m__main__[0m | [32m1 active state, at 0x401b32. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:06,939 | [32m__main__[0m | [32m1 active state, at 0x401b35. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:06,956 | [32m__main__[0m | [32m1 active state, at 0x40130b. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:06,995 | [32m__main__[0m | [32m1 active state, at 0x401313. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:07,032 | [32m__main__[0m | [32m1 active state, at 0x401319. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:07,074 | [32m__main__[0m | [32m1 active state, at 0x401322. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:07,101 | [32m__main__[0m | [32m1 active state, at 0x401328. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:07,191 | [32m__main__[0m | [32m1 active state, at 0x401331. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:07,223 | [32m__main__[0m | [32m1 active state, at 0x401334. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:07,445 | [32m__main__[0m | [32m2 active states, at ['0x401338', '0x401367']. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:07,519 | [32m__main__[0m | [32m2 active states, at ['0x40133b', '0x40136c']. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:07,905 | [32m__main__[0m | [32m2 active states, at ['0x40134c', '0x40136d']. Max bbs is 12, max #constraints is 1[0m
+ERROR   | 2020-07-20 14:44:08,141 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x401352
+  Read Address <BV32 secret_125_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_102_8{UNINITIALIZED}> (TAINTED)
+  Path 1
+  A set of argument values meeting constraints is: {'idx': 65552}
+  constraints were [<Bool (0x404048 + (idx_100_32 << 0x1)) == 0x424068>, <Bool secret_125_32{UNINITIALIZED} == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:44:08,163 | [32m__main__[0m | [32m2 active states, at ['0x401359', '0x4000030']. Max bbs is 13, max #constraints is 2[0m
+INFO    | 2020-07-20 14:44:08,197 | [32m__main__[0m | [32mno active states; 1 state finished; 1 Spectre violation[0m
+INFO    | 2020-07-20 14:44:08,198 | [32m__main__[0m | [32mRunning Spectre v1 case 5 with speculative execution[0m
+WARNING | 2020-07-20 14:44:09,543 | [36mcle.loader[0m | [36mThe main binary is a position-independent executable. It is being loaded with a base address of 0x400000.[0m
+INFO    | 2020-07-20 14:44:10,276 | [32m__main__[0m | [32m1 active state, at 0x401b32. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:10,293 | [32m__main__[0m | [32m1 active state, at 0x401b35. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:10,311 | [32m__main__[0m | [32m1 active state, at 0x40137a. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:10,348 | [32m__main__[0m | [32m1 active state, at 0x401382. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:10,395 | [32m__main__[0m | [32m1 active state, at 0x401388. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:10,437 | [32m__main__[0m | [32m1 active state, at 0x401391. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:10,460 | [32m__main__[0m | [32m1 active state, at 0x401397. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:10,483 | [32m__main__[0m | [32m1 active state, at 0x40139a. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:10,509 | [32m__main__[0m | [32m1 active state, at 0x40139d. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:10,674 | [32m__main__[0m | [32m2 active states, at ['0x4013a1', '0x4013eb']. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:10,729 | [32m__main__[0m | [32m2 active states, at ['0x4013a4', '0x4013f0']. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:10,773 | [32m__main__[0m | [32m2 active states, at ['0x4013a7', '0x4013f1']. Max bbs is 12, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:10,930 | [32m__main__[0m | [32m2 active states, at ['0x4013e5', '0x4000030']. Max bbs is 13, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:10,963 | [32m__main__[0m | [32m1 active state, at 0x4013e9; 1 state finished. Max bbs is 14, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:11,020 | [32m__main__[0m | [32m2 active states, at ['0x4013eb', '0x4013b5']; 1 state finished. Max bbs is 15, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:11,116 | [32m__main__[0m | [32m2 active states, at ['0x4013f0', '0x4013be']; 1 state finished. Max bbs is 16, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:11,262 | [32m__main__[0m | [32m2 active states, at ['0x4013f1', '0x4013c2']; 1 state finished. Max bbs is 17, max #constraints is 1[0m
+ERROR   | 2020-07-20 14:44:11,380 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x4013c8
+  Read Address <BV32 secret_156_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_133_8{UNINITIALIZED}> (TAINTED)
+  Path 10
+  A set of argument values meeting constraints is: {'idx': 131112}
+  constraints were [<Bool __add__(0xffffffff, idx_131_32, 0x404048) == 0x42406f>, <Bool secret_156_32{UNINITIALIZED} == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:44:11,388 | [32m__main__[0m | [32m2 active states, at ['0x4000030', '0x4013cf']; 1 state finished. Max bbs is 18, max #constraints is 2[0m
+INFO    | 2020-07-20 14:44:11,396 | [32m__main__[0m | [32mno active states; 2 states finished; 1 Spectre violation[0m
+INFO    | 2020-07-20 14:44:11,397 | [32m__main__[0m | [32mRunning Spectre v1 case 6 with speculative execution[0m
+WARNING | 2020-07-20 14:44:12,719 | [36mcle.loader[0m | [36mThe main binary is a position-independent executable. It is being loaded with a base address of 0x400000.[0m
+INFO    | 2020-07-20 14:44:13,479 | [32m__main__[0m | [32m1 active state, at 0x401b36. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:13,497 | [32m__main__[0m | [32m1 active state, at 0x401b39. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:13,513 | [32m__main__[0m | [32m1 active state, at 0x401400. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:13,552 | [32m__main__[0m | [32m1 active state, at 0x401409. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:13,592 | [32m__main__[0m | [32m1 active state, at 0x40140f. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:13,672 | [32m__main__[0m | [32m1 active state, at 0x401418. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:13,759 | [32m__main__[0m | [32m1 active state, at 0x401426. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:13,805 | [32m__main__[0m | [32m1 active state, at 0x401430. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:13,846 | [32m__main__[0m | [32m1 active state, at 0x401437. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:13,888 | [32m__main__[0m | [32m1 active state, at 0x40143e. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:13,922 | [32m__main__[0m | [32m1 active state, at 0x401446. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:13,949 | [32m__main__[0m | [32m1 active state, at 0x40144c. Max bbs is 12, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:13,974 | [32m__main__[0m | [32m1 active state, at 0x40144f. Max bbs is 13, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:14,022 | [32m__main__[0m | [32m2 active states, at ['0x401457', '0x40147f']. Max bbs is 14, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:14,084 | [32m__main__[0m | [32m2 active states, at ['0x401460', '0x401484']. Max bbs is 15, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:14,235 | [32m__main__[0m | [32m2 active states, at ['0x401464', '0x401485']. Max bbs is 16, max #constraints is 1[0m
+ERROR   | 2020-07-20 14:44:14,332 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x40146a
+  Read Address <BV32 secret_189_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_164_8{UNINITIALIZED}> (TAINTED)
+  Path 1
+  A set of argument values meeting constraints is: {'idx': 131104}
+  constraints were [<Bool (idx_162_32 + 0x404048) == 0x424068>, <Bool secret_189_32{UNINITIALIZED} == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:44:14,360 | [32m__main__[0m | [32m2 active states, at ['0x401471', '0x401486']. Max bbs is 17, max #constraints is 2[0m
+INFO    | 2020-07-20 14:44:14,442 | [32m__main__[0m | [32m1 active state, at 0x401487; 1 Spectre violation. Max bbs is 18, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:14,511 | [32m__main__[0m | [32m1 active state, at 0x4000030; 1 Spectre violation. Max bbs is 19, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:14,518 | [32m__main__[0m | [32mno active states; 1 state finished; 1 Spectre violation[0m
+INFO    | 2020-07-20 14:44:14,519 | [32m__main__[0m | [32mRunning Spectre v1 case 7 with speculative execution[0m
+WARNING | 2020-07-20 14:44:16,117 | [36mcle.loader[0m | [36mThe main binary is a position-independent executable. It is being loaded with a base address of 0x400000.[0m
+INFO    | 2020-07-20 14:44:16,885 | [32m__main__[0m | [32m1 active state, at 0x401b32. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:16,901 | [32m__main__[0m | [32m1 active state, at 0x401b35. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:16,935 | [32m__main__[0m | [32m1 active state, at 0x401496. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:16,968 | [32m__main__[0m | [32m1 active state, at 0x40149e. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:17,000 | [32m__main__[0m | [32m1 active state, at 0x4014a4. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:17,030 | [32m__main__[0m | [32m1 active state, at 0x4014ad. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:17,054 | [32m__main__[0m | [32m1 active state, at 0x4014b3. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:17,081 | [32m__main__[0m | [32m1 active state, at 0x4014b8. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:17,151 | [32m__main__[0m | [32m1 active state, at 0x4014bd. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:17,230 | [32m__main__[0m | [32m2 active states, at ['0x4014c7', '0x4014ef']. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:17,440 | [32m__main__[0m | [32m2 active states, at ['0x4014d0', '0x4014f5']. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:17,564 | [32m__main__[0m | [32m2 active states, at ['0x4014d4', '0x4014fb']. Max bbs is 12, max #constraints is 1[0m
+ERROR   | 2020-07-20 14:44:17,668 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x4014da
+  Read Address <BV32 secret_222_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_197_8{UNINITIALIZED}> (TAINTED)
+  Path 1
+  A set of argument values meeting constraints is: {'idx': 131104}
+  constraints were [<Bool (idx_195_32 + 0x404048) == 0x424068>, <Bool secret_222_32{UNINITIALIZED} == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:44:17,700 | [32m__main__[0m | [32m2 active states, at ['0x4014e1', '0x4014fe']. Max bbs is 13, max #constraints is 2[0m
+INFO    | 2020-07-20 14:44:17,724 | [32m__main__[0m | [32m1 active state, at 0x401501; 1 Spectre violation. Max bbs is 14, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:17,870 | [32m__main__[0m | [32m2 active states, at ['0x401505', '0x401517']; 1 Spectre violation. Max bbs is 15, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:17,949 | [32m__main__[0m | [32m2 active states, at ['0x401508', '0x40151c']; 1 Spectre violation. Max bbs is 16, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:17,987 | [32m__main__[0m | [32m2 active states, at ['0x40150b', '0x40151d']; 1 Spectre violation. Max bbs is 17, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:18,045 | [32m__main__[0m | [32m2 active states, at ['0x40151c', '0x40151e']; 1 Spectre violation. Max bbs is 18, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:18,084 | [32m__main__[0m | [32m2 active states, at ['0x40151d', '0x40151f']; 1 Spectre violation. Max bbs is 19, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:18,114 | [32m__main__[0m | [32m2 active states, at ['0x40151e', '0x4000030']; 1 Spectre violation. Max bbs is 20, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:18,138 | [32m__main__[0m | [32m1 active state, at 0x40151f; 1 state finished; 1 Spectre violation. Max bbs is 21, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:18,152 | [32m__main__[0m | [32m1 active state, at 0x4000030; 1 state finished; 1 Spectre violation. Max bbs is 22, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:18,158 | [32m__main__[0m | [32mno active states; 2 states finished; 1 Spectre violation[0m
+INFO    | 2020-07-20 14:44:18,159 | [32m__main__[0m | [32mRunning Spectre v1 case 8 with speculative execution[0m
+WARNING | 2020-07-20 14:44:19,251 | [36mcle.loader[0m | [36mThe main binary is a position-independent executable. It is being loaded with a base address of 0x400000.[0m
+INFO    | 2020-07-20 14:44:20,071 | [32m__main__[0m | [32m1 active state, at 0x401b32. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:20,087 | [32m__main__[0m | [32m1 active state, at 0x401b35. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:20,101 | [32m__main__[0m | [32m1 active state, at 0x40152c. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:20,131 | [32m__main__[0m | [32m1 active state, at 0x401534. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:20,160 | [32m__main__[0m | [32m1 active state, at 0x40153a. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:20,187 | [32m__main__[0m | [32m1 active state, at 0x401543. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:20,207 | [32m__main__[0m | [32m1 active state, at 0x401549. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:20,229 | [32m__main__[0m | [32m1 active state, at 0x40154c. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:20,253 | [32m__main__[0m | [32m1 active state, at 0x40154f. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:20,405 | [32m__main__[0m | [32m2 active states, at ['0x401553', '0x40155b']. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:20,452 | [32m__main__[0m | [32m2 active states, at ['0x401556', '0x40156f']. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:20,539 | [32m__main__[0m | [32m2 active states, at ['0x401559', '0x40157c']. Max bbs is 12, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:20,571 | [32m__main__[0m | [32m2 active states, at ['0x401565', '0x401582']. Max bbs is 13, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:20,735 | [32m__main__[0m | [32m2 active states, at ['0x40156f', '0x40158f']. Max bbs is 14, max #constraints is 1[0m
+ERROR   | 2020-07-20 14:44:20,844 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x401575
+  Read Address <BV32 secret_253_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_230_8{UNINITIALIZED}> (TAINTED)
+  Path 1
+  A set of argument values meeting constraints is: {'idx': 131104}
+  constraints were [<Bool (0x404048 + idx_228_32) == 0x424068>, <Bool secret_253_32{UNINITIALIZED} == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:44:20,869 | [32m__main__[0m | [32m2 active states, at ['0x40157c', '0x401590']. Max bbs is 15, max #constraints is 2[0m
+INFO    | 2020-07-20 14:44:20,908 | [32m__main__[0m | [32m1 active state, at 0x4000030; 1 Spectre violation. Max bbs is 16, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:20,936 | [32m__main__[0m | [32mno active states; 1 state finished; 1 Spectre violation[0m
+INFO    | 2020-07-20 14:44:20,936 | [32m__main__[0m | [32mRunning Spectre v1 case 9 with speculative execution[0m
+WARNING | 2020-07-20 14:44:22,535 | [36mcle.loader[0m | [36mThe main binary is a position-independent executable. It is being loaded with a base address of 0x400000.[0m
+INFO    | 2020-07-20 14:44:23,279 | [32m__main__[0m | [32m1 active state, at 0x401b32. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:23,299 | [32m__main__[0m | [32m1 active state, at 0x401b35. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:23,318 | [32m__main__[0m | [32m1 active state, at 0x40159c. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:23,358 | [32m__main__[0m | [32m1 active state, at 0x4015a4. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:23,418 | [32m__main__[0m | [32m1 active state, at 0x4015aa. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:23,446 | [32m__main__[0m | [32m1 active state, at 0x4015b3. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:23,483 | [32m__main__[0m | [32m2 active states, at ['0x4015df', '0x4015b7']. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:23,533 | [32m__main__[0m | [32m2 active states, at ['0x4015e1', '0x4015c0']. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:23,652 | [32m__main__[0m | [32m2 active states, at ['0x4000030', '0x4015c4']. Max bbs is 9, max #constraints is 1[0m
+ERROR   | 2020-07-20 14:44:23,791 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x4015ca
+  Read Address <BV32 secret_283_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_261_8{UNINITIALIZED}> (TAINTED)
+  Path 0
+  A set of argument values meeting constraints is: {'idx': 131104}
+  constraints were [<Bool (idx_259_32 + 0x404048) == 0x424068>, <Bool secret_283_32{UNINITIALIZED} == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:44:23,800 | [32m__main__[0m | [32m1 active state, at 0x4015d1; 1 state finished. Max bbs is 10, max #constraints is 2[0m
+INFO    | 2020-07-20 14:44:23,801 | [32m__main__[0m | [32mno active states; 1 state finished; 1 Spectre violation[0m
+INFO    | 2020-07-20 14:44:23,802 | [32m__main__[0m | [32mRunning Spectre v1 case 10 with speculative execution[0m
+WARNING | 2020-07-20 14:44:24,979 | [36mcle.loader[0m | [36mThe main binary is a position-independent executable. It is being loaded with a base address of 0x400000.[0m
+INFO    | 2020-07-20 14:44:25,713 | [32m__main__[0m | [32m1 active state, at 0x401b32. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:25,727 | [32m__main__[0m | [32m1 active state, at 0x401b35. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:25,741 | [32m__main__[0m | [32m1 active state, at 0x4015ee. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:25,773 | [32m__main__[0m | [32m1 active state, at 0x4015f6. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:25,836 | [32m__main__[0m | [32m1 active state, at 0x4015f9. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:25,869 | [32m__main__[0m | [32m1 active state, at 0x4015ff. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:25,907 | [32m__main__[0m | [32m1 active state, at 0x40160d. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:25,926 | [32m__main__[0m | [32m1 active state, at 0x401613. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:25,944 | [32m__main__[0m | [32m1 active state, at 0x401616. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:25,965 | [32m__main__[0m | [32m1 active state, at 0x401619. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:26,115 | [32m__main__[0m | [32m2 active states, at ['0x40161d', '0x401643']. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:26,200 | [32m__main__[0m | [32m2 active states, at ['0x401626', '0x401648']. Max bbs is 12, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:26,313 | [32m__main__[0m | [32m2 active states, at ['0x40162a', '0x401649']. Max bbs is 13, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:26,355 | [32m__main__[0m | [32m2 active states, at ['0x40162d', '0x4000030']. Max bbs is 14, max #constraints is 1[0m
+ERROR   | 2020-07-20 14:44:26,582 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE BRANCH !!!!!!!!
+  Instruction Address 0x40162d
+  Branch Target <BV32 0x40162f>
+  Guard <Bool secret_312_1{UNINITIALIZED} != 0> (TAINTED)
+  Path 11
+  A set of argument values meeting constraints is: {'idx': 131104, 'val': 0}
+  constraints were [<Bool (idx_289_32 + 0x404048) == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:44:26,594 | [32m__main__[0m | [32m2 active states, at ['0x40162f', '0x401643']; 1 state finished. Max bbs is 15, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:26,618 | [32m__main__[0m | [32m1 active state, at 0x401648; 1 state finished; 1 Spectre violation. Max bbs is 16, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:26,666 | [32m__main__[0m | [32m1 active state, at 0x401649; 1 state finished; 1 Spectre violation. Max bbs is 17, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:26,681 | [32m__main__[0m | [32m1 active state, at 0x4000030; 1 state finished; 1 Spectre violation. Max bbs is 18, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:26,695 | [32m__main__[0m | [32mno active states; 2 states finished; 1 Spectre violation[0m
+INFO    | 2020-07-20 14:44:26,696 | [32m__main__[0m | [32mRunning Spectre v1 case 11gcc with speculative execution[0m
+WARNING | 2020-07-20 14:44:27,856 | [36mcle.loader[0m | [36mThe main binary is a position-independent executable. It is being loaded with a base address of 0x400000.[0m
+INFO    | 2020-07-20 14:44:28,567 | [32m__main__[0m | [32m1 active state, at 0x401090. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:28,582 | [32m__main__[0m | [32m1 active state, at 0x401093. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:28,596 | [32m__main__[0m | [32m1 active state, at 0x401656. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:28,624 | [32m__main__[0m | [32m1 active state, at 0x40165f. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:28,649 | [32m__main__[0m | [32m1 active state, at 0x401665. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:28,675 | [32m__main__[0m | [32m1 active state, at 0x40166e. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:28,694 | [32m__main__[0m | [32m1 active state, at 0x401674. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:28,711 | [32m__main__[0m | [32m1 active state, at 0x401677. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:28,733 | [32m__main__[0m | [32m1 active state, at 0x40167a. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:28,918 | [32m__main__[0m | [32m2 active states, at ['0x40167e', '0x4016b6']. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:28,963 | [32m__main__[0m | [32m2 active states, at ['0x401687', '0x4016ba']. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:29,076 | [32m__main__[0m | [32m2 active states, at ['0x40168b', '0x4016bb']. Max bbs is 12, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:29,254 | [32m__main__[0m | [32m2 active states, at ['0x4017a0', '0x4000030']. Max bbs is 13, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:29,381 | [32m__main__[0m | [32m1 active state, at 0x401b32; 1 state finished. Max bbs is 14, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:29,395 | [32m__main__[0m | [32m1 active state, at 0x401b35; 1 state finished. Max bbs is 15, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:29,407 | [32m__main__[0m | [32m1 active state, at 0x4017aa; 1 state finished. Max bbs is 16, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:29,511 | [32m__main__[0m | [32m1 active state, at 0x4017b2; 1 state finished. Max bbs is 17, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:29,673 | [32m__main__[0m | [32m1 active state, at 0x4017b5; 1 state finished. Max bbs is 18, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:29,684 | [32m__main__[0m | [32m1 active state, at 0x4017e5; 1 state finished. Max bbs is 19, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:29,733 | [32m__main__[0m | [32m1 active state, at 0x4017e8; 1 state finished. Max bbs is 20, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:29,808 | [32m__main__[0m | [32m1 active state, at 0x4017b7; 1 state finished. Max bbs is 21, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:29,831 | [32m__main__[0m | [32m1 active state, at 0x4017be; 1 state finished. Max bbs is 22, max #constraints is 1[0m
+ERROR   | 2020-07-20 14:44:29,941 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x4017c3
+  Read Address <BV32 secret_341_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_320_8{UNINITIALIZED}> (TAINTED)
+  Path 10
+  A set of argument values meeting constraints is: {'idx': 131104}
+  constraints were [<Bool (idx_318_32 + 0x404048) == 0x424068>, <Bool secret_341_32{UNINITIALIZED} == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:44:29,947 | [32m__main__[0m | [32m1 active state, at 0x4017c5; 1 state finished. Max bbs is 23, max #constraints is 2[0m
+INFO    | 2020-07-20 14:44:29,948 | [32m__main__[0m | [32mno active states; 1 state finished; 1 Spectre violation[0m
+INFO    | 2020-07-20 14:44:29,949 | [32m__main__[0m | [32mRunning Spectre v1 case 11ker with speculative execution[0m
+WARNING | 2020-07-20 14:44:31,291 | [36mcle.loader[0m | [36mThe main binary is a position-independent executable. It is being loaded with a base address of 0x400000.[0m
+INFO    | 2020-07-20 14:44:32,088 | [32m__main__[0m | [32m1 active state, at 0x401090. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:32,104 | [32m__main__[0m | [32m1 active state, at 0x401093. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:32,117 | [32m__main__[0m | [32m1 active state, at 0x4016c8. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:32,147 | [32m__main__[0m | [32m1 active state, at 0x4016d1. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:32,174 | [32m__main__[0m | [32m1 active state, at 0x4016d7. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:32,200 | [32m__main__[0m | [32m1 active state, at 0x4016e0. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:32,218 | [32m__main__[0m | [32m1 active state, at 0x4016e6. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:32,237 | [32m__main__[0m | [32m1 active state, at 0x4016e9. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:32,282 | [32m__main__[0m | [32m1 active state, at 0x4016ec. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:32,431 | [32m__main__[0m | [32m2 active states, at ['0x4016f0', '0x401728']. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:32,471 | [32m__main__[0m | [32m2 active states, at ['0x4016f9', '0x40172c']. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:32,587 | [32m__main__[0m | [32m2 active states, at ['0x4016fd', '0x40172d']. Max bbs is 12, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:32,693 | [32m__main__[0m | [32m2 active states, at ['0x4017fb', '0x4000030']. Max bbs is 13, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:32,728 | [32m__main__[0m | [32m1 active state, at 0x401b32; 1 state finished. Max bbs is 14, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:32,742 | [32m__main__[0m | [32m1 active state, at 0x401b35; 1 state finished. Max bbs is 15, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:32,755 | [32m__main__[0m | [32m1 active state, at 0x401806; 1 state finished. Max bbs is 16, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:32,785 | [32m__main__[0m | [32m1 active state, at 0x401815; 1 state finished. Max bbs is 17, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:32,815 | [32m__main__[0m | [32m1 active state, at 0x40181b; 1 state finished. Max bbs is 18, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:32,831 | [32m__main__[0m | [32m1 active state, at 0x401846; 1 state finished. Max bbs is 19, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:32,850 | [32m__main__[0m | [32m1 active state, at 0x40184a; 1 state finished. Max bbs is 20, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:32,878 | [32m__main__[0m | [32m1 active state, at 0x401820; 1 state finished. Max bbs is 21, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:32,898 | [32m__main__[0m | [32m1 active state, at 0x401823; 1 state finished. Max bbs is 22, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:32,927 | [32m__main__[0m | [32m1 active state, at 0x401825; 1 state finished. Max bbs is 23, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:32,959 | [32m__main__[0m | [32m1 active state, at 0x40182b; 1 state finished. Max bbs is 24, max #constraints is 1[0m
+ERROR   | 2020-07-20 14:44:33,034 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x40182b
+  Read Address <BV32 secret_372_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_351_8{UNINITIALIZED}> (TAINTED)
+  Path 10
+  A set of argument values meeting constraints is: {'idx': 131104}
+  constraints were [<Bool (idx_349_32 + 0x404048) == 0x424068>, <Bool secret_372_32{UNINITIALIZED} == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:44:33,041 | [32m__main__[0m | [32m1 active state, at 0x40182d; 1 state finished. Max bbs is 25, max #constraints is 2[0m
+INFO    | 2020-07-20 14:44:33,042 | [32m__main__[0m | [32mno active states; 1 state finished; 1 Spectre violation[0m
+INFO    | 2020-07-20 14:44:33,042 | [32m__main__[0m | [32mRunning Spectre v1 case 11sub with speculative execution[0m
+WARNING | 2020-07-20 14:44:34,082 | [36mcle.loader[0m | [36mThe main binary is a position-independent executable. It is being loaded with a base address of 0x400000.[0m
+INFO    | 2020-07-20 14:44:34,759 | [32m__main__[0m | [32m1 active state, at 0x401090. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:34,773 | [32m__main__[0m | [32m1 active state, at 0x401093. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:34,785 | [32m__main__[0m | [32m1 active state, at 0x40173a. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:34,813 | [32m__main__[0m | [32m1 active state, at 0x401743. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:34,862 | [32m__main__[0m | [32m1 active state, at 0x401749. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:34,915 | [32m__main__[0m | [32m1 active state, at 0x401752. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:34,933 | [32m__main__[0m | [32m1 active state, at 0x401758. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:34,950 | [32m__main__[0m | [32m1 active state, at 0x40175b. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:34,970 | [32m__main__[0m | [32m1 active state, at 0x40175e. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:35,129 | [32m__main__[0m | [32m2 active states, at ['0x401762', '0x40179a']. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:35,179 | [32m__main__[0m | [32m2 active states, at ['0x40176b', '0x40179e']. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:35,371 | [32m__main__[0m | [32m2 active states, at ['0x40176f', '0x40179f']. Max bbs is 12, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:35,432 | [32m__main__[0m | [32m2 active states, at ['0x401854', '0x4000030']. Max bbs is 13, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:35,471 | [32m__main__[0m | [32m1 active state, at 0x401b32; 1 state finished. Max bbs is 14, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:35,484 | [32m__main__[0m | [32m1 active state, at 0x401b35; 1 state finished. Max bbs is 15, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:35,497 | [32m__main__[0m | [32m1 active state, at 0x40185e; 1 state finished. Max bbs is 16, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:35,522 | [32m__main__[0m | [32m1 active state, at 0x401866; 1 state finished. Max bbs is 17, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:35,538 | [32m__main__[0m | [32m1 active state, at 0x401869; 1 state finished. Max bbs is 18, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:35,557 | [32m__main__[0m | [32m1 active state, at 0x40186d; 1 state finished. Max bbs is 19, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:35,584 | [32m__main__[0m | [32m1 active state, at 0x401878; 1 state finished. Max bbs is 20, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:35,614 | [32m__main__[0m | [32m1 active state, at 0x40187b; 1 state finished. Max bbs is 21, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:35,633 | [32m__main__[0m | [32m1 active state, at 0x40187f; 1 state finished. Max bbs is 22, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:35,664 | [32m__main__[0m | [32m2 active states, at ['0x401889', '0x401881']; 1 state finished. Max bbs is 23, max #constraints is 1[0m
+INFO    | 2020-07-20 14:44:35,700 | [32m__main__[0m | [32m2 active states, at ['0x40188b', '0x401883']; 1 state finished. Max bbs is 24, max #constraints is 1[0m
+ERROR   | 2020-07-20 14:44:35,778 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x40188e
+  Read Address <BV32 secret_401_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_380_8{UNINITIALIZED}> (TAINTED)
+  Path 101
+  A set of argument values meeting constraints is: {'idx': 131104}
+  constraints were [<Bool (idx_378_32 + 0x404048) == 0x424068>, <Bool secret_401_32{UNINITIALIZED} == 0x424068>]
+[0m
+ERROR   | 2020-07-20 14:44:35,854 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x401883
+  Read Address <BV32 secret_401_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_380_8{UNINITIALIZED}> (TAINTED)
+  Path 100
+  A set of argument values meeting constraints is: {'idx': 131104}
+  constraints were [<Bool (idx_378_32 + 0x404048) == 0x424068>, <Bool secret_401_32{UNINITIALIZED} == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:44:35,860 | [32m__main__[0m | [32m2 active states, at ['0x401890', '0x401885']; 1 state finished. Max bbs is 25, max #constraints is 2[0m
+INFO    | 2020-07-20 14:44:35,861 | [32m__main__[0m | [32mno active states; 1 state finished; 2 Spectre violations[0m
+INFO    | 2020-07-20 14:44:35,862 | [32m__main__[0m | [32mRunning Spectre v1 case 12 with speculative execution[0m
+WARNING | 2020-07-20 14:44:36,914 | [36mcle.loader[0m | [36mThe main binary is a position-independent executable. It is being loaded with a base address of 0x400000.[0m
+INFO    | 2020-07-20 14:44:37,536 | [32m__main__[0m | [32m1 active state, at 0x401b32. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:37,548 | [32m__main__[0m | [32m1 active state, at 0x401b35. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:37,561 | [32m__main__[0m | [32m1 active state, at 0x4018a9. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:37,589 | [32m__main__[0m | [32m1 active state, at 0x4018b1. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:37,621 | [32m__main__[0m | [32m1 active state, at 0x4018b7. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:37,648 | [32m__main__[0m | [32m1 active state, at 0x4018bd. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:37,675 | [32m__main__[0m | [32m1 active state, at 0x4018c3. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:37,720 | [32m__main__[0m | [32m1 active state, at 0x4018c9. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:37,738 | [32m__main__[0m | [32m1 active state, at 0x4018cc. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:37,756 | [32m__main__[0m | [32m1 active state, at 0x4018cf. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:37,773 | [32m__main__[0m | [32m1 active state, at 0x4018d2. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:37,848 | [32m__main__[0m | [32m1 active state, at 0x4018dc. Max bbs is 12, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:37,866 | [32m__main__[0m | [32m1 active state, at 0x4018e2. Max bbs is 13, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:38,008 | [32m__main__[0m | [32m2 active states, at ['0x4018e8', '0x40191d']. Max bbs is 14, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:38,050 | [32m__main__[0m | [32m2 active states, at ['0x4018eb', '0x401922']. Max bbs is 15, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:38,089 | [32m__main__[0m | [32m2 active states, at ['0x4018f1', '0x401923']. Max bbs is 16, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:38,367 | [32m__main__[0m | [32m2 active states, at ['0x401902', '0x401924']. Max bbs is 17, max #constraints is 1[0m
+ERROR   | 2020-07-20 14:44:38,597 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x401908
+  Read Address <BV32 secret_437_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_411_8{UNINITIALIZED}> (TAINTED)
+  Path 1
+  A set of argument values meeting constraints is: {'idx': 2013265948, 'val': 0}
+  constraints were [<Bool __add__(0x404048, mem_7fff0000_431_32{UNINITIALIZED}, idx_408_32) == 0x424074>, <Bool secret_437_32{UNINITIALIZED} == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:44:38,671 | [32m__main__[0m | [32m2 active states, at ['0x40190f', '0x401925']. Max bbs is 18, max #constraints is 2[0m
+INFO    | 2020-07-20 14:44:38,683 | [32m__main__[0m | [32m1 active state, at 0x4000030; 1 Spectre violation. Max bbs is 19, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:38,689 | [32m__main__[0m | [32mno active states; 1 state finished; 1 Spectre violation[0m
+INFO    | 2020-07-20 14:44:38,690 | [32m__main__[0m | [32mRunning Spectre v1 case 13 with speculative execution[0m
+WARNING | 2020-07-20 14:44:40,408 | [36mcle.loader[0m | [36mThe main binary is a position-independent executable. It is being loaded with a base address of 0x400000.[0m
+INFO    | 2020-07-20 14:44:41,030 | [32m__main__[0m | [32m1 active state, at 0x401b32. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:41,043 | [32m__main__[0m | [32m1 active state, at 0x401b35. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:41,056 | [32m__main__[0m | [32m1 active state, at 0x401932. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:41,098 | [32m__main__[0m | [32m1 active state, at 0x40193a. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:41,125 | [32m__main__[0m | [32m1 active state, at 0x401940. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:41,149 | [32m__main__[0m | [32m1 active state, at 0x401946. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:41,168 | [32m__main__[0m | [32m1 active state, at 0x401949. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:41,197 | [32m__main__[0m | [32m1 active state, at 0x401955. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:41,215 | [32m__main__[0m | [32m1 active state, at 0x40195b. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:41,233 | [32m__main__[0m | [32m1 active state, at 0x40195e. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:41,253 | [32m__main__[0m | [32m1 active state, at 0x401961. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:41,389 | [32m__main__[0m | [32m2 active states, at ['0x401965', '0x40196c']. Max bbs is 12, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:41,427 | [32m__main__[0m | [32m3 active states, at ['0x401971', '0x40199d', '0x401975']. Max bbs is 13, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:41,493 | [32m__main__[0m | [32m3 active states, at ['0x401975', '0x4019a2', '0x40197e']. Max bbs is 14, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:41,627 | [32m__main__[0m | [32m3 active states, at ['0x40197e', '0x4019a3', '0x401982']. Max bbs is 15, max #constraints is 1[0m
+ERROR   | 2020-07-20 14:44:41,820 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x401988
+  Read Address <BV32 secret_468_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_445_8{UNINITIALIZED}> (TAINTED)
+  Path 00
+  A set of argument values meeting constraints is: {'idx': 131104}
+  constraints were [<Bool (idx_443_32 + 0x404048) == 0x424068>, <Bool secret_468_32{UNINITIALIZED} == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:44:41,827 | [32m__main__[0m | [32m3 active states, at ['0x401982', '0x4000030', '0x40198f']. Max bbs is 16, max #constraints is 2[0m
+ERROR   | 2020-07-20 14:44:41,912 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x401988
+  Read Address <BV32 secret_473_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_445_8{UNINITIALIZED}> (TAINTED)
+  Path 10
+  A set of argument values meeting constraints is: {'idx': 131104}
+  constraints were [<Bool (idx_443_32 + 0x404048) == 0x424068>, <Bool secret_473_32{UNINITIALIZED} == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:44:41,922 | [32m__main__[0m | [32m1 active state, at 0x40198f; 1 state finished; 1 Spectre violation. Max bbs is 17, max #constraints is 2[0m
+INFO    | 2020-07-20 14:44:41,923 | [32m__main__[0m | [32mno active states; 1 state finished; 2 Spectre violations[0m
+INFO    | 2020-07-20 14:44:41,923 | [32m__main__[0m | [32mRunning Spectre v1 case 14 with speculative execution[0m
+WARNING | 2020-07-20 14:44:43,035 | [36mcle.loader[0m | [36mThe main binary is a position-independent executable. It is being loaded with a base address of 0x400000.[0m
+INFO    | 2020-07-20 14:44:43,763 | [32m__main__[0m | [32m1 active state, at 0x401b32. Max bbs is 1, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:43,777 | [32m__main__[0m | [32m1 active state, at 0x401b35. Max bbs is 2, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:43,789 | [32m__main__[0m | [32m1 active state, at 0x4019b2. Max bbs is 3, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:43,816 | [32m__main__[0m | [32m1 active state, at 0x4019ba. Max bbs is 4, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:43,865 | [32m__main__[0m | [32m1 active state, at 0x4019c0. Max bbs is 5, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:43,889 | [32m__main__[0m | [32m1 active state, at 0x4019c9. Max bbs is 6, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:43,963 | [32m__main__[0m | [32m1 active state, at 0x4019db. Max bbs is 7, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:43,981 | [32m__main__[0m | [32m1 active state, at 0x4019e1. Max bbs is 8, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:43,998 | [32m__main__[0m | [32m1 active state, at 0x4019e4. Max bbs is 9, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:44,038 | [32m__main__[0m | [32m1 active state, at 0x4019e7. Max bbs is 10, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:44,173 | [32m__main__[0m | [32m2 active states, at ['0x4019eb', '0x401a29']. Max bbs is 11, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:44,217 | [32m__main__[0m | [32m2 active states, at ['0x4019ef', '0x401a2e']. Max bbs is 12, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:44,270 | [32m__main__[0m | [32m2 active states, at ['0x4019fb', '0x401a2f']. Max bbs is 13, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:44,386 | [32m__main__[0m | [32m2 active states, at ['0x401a0e', '0x401a30']. Max bbs is 14, max #constraints is 1[0m
+ERROR   | 2020-07-20 14:44:44,486 | [33mspectre[0m | [33m
+!!!!!!!! UNSAFE READ !!!!!!!!
+  Instruction Address 0x401a14
+  Read Address <BV32 secret_506_32{UNINITIALIZED}> (TAINTED)
+  Read Value <BV8 secret_481_8{UNINITIALIZED}> (TAINTED)
+  Path 1
+  A set of argument values meeting constraints is: {'idx': 131112}
+  constraints were [<Bool (0x404048 + idx_479_32[31:4] .. __invert__(idx_479_32[3:0])) == 0x42406f>, <Bool secret_506_32{UNINITIALIZED} == 0x424068>]
+[0m
+INFO    | 2020-07-20 14:44:44,559 | [32m__main__[0m | [32m2 active states, at ['0x401a1b', '0x401a31']. Max bbs is 15, max #constraints is 2[0m
+INFO    | 2020-07-20 14:44:44,572 | [32m__main__[0m | [32m1 active state, at 0x4000030; 1 Spectre violation. Max bbs is 16, max #constraints is 0[0m
+INFO    | 2020-07-20 14:44:44,579 | [32m__main__[0m | [32mno active states; 1 state finished; 1 Spectre violation[0m
+running time: 1.7341248960000009
+running time: 1.4061029400000002
+running time: 1.2317911299999977
+running time: 1.3382597830000016
+running time: 1.1671016299999977
+running time: 1.1147001069999973
+running time: 1.3303623190000025
+running time: 0.9057724780000029
+running time: 0.5594838630000041
+running time: 1.0314587079999953
+running time: 1.4205423519999982
+running time: 1.1001325030000046
+running time: 1.1418258950000038
+running time: 1.2079629100000062
+running time: 0.9357275919999992
+running time: 0.8728973070000023

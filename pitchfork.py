@@ -1,3 +1,4 @@
+import sys
 from specvex import makeSpeculative
 from oob import armBoundsChecks, OOBViolationFilter
 from spectre import armSpectreOOBChecks, armSpectreExplicitChecks, SpectreViolationFilter
@@ -91,6 +92,15 @@ def TestcasesProject():
 def newSpectreV1TestcasesProject():
     return angr.Project('new-testcases/spectrev1')
 
+def mySpectreV1TestcasesProject():
+    return angr.Project('myexpes/spectrev1')
+
+def maskingSpectreV1TestcasesProject():
+    return angr.Project('myexpes/spectrev1_masking')
+
+def newSpectreV4TestcasesProject():
+    return angr.Project('myexpes/spectrev4')
+
 def forwardingTestcasesProject():
     return angr.Project('new-testcases/forwarding')
 
@@ -159,9 +169,8 @@ def forwarding_example_5():
 def test_case_1():
     proj = TestcasesProject()
     state = funcEntryState(proj, "case_1", [
-        ("idx", publicValue(bits=64)),
-        ("val", publicValue(bits=8)),
-        ("idx2", publicValue(bits=64))
+        ("idx1", publicValue(bits=32)),
+        ("idx2", publicValue(bits=32))
     ])
     addSecretObject(proj, state, 'secretarray', 16)
     return (proj, state)
@@ -231,6 +240,188 @@ def spectrev1_case_13():
 
 def spectrev1_case_14():
     return _typicalSpectrev1Case("case_14")
+
+def _mytypicalSpectrev1Case(casename):
+    proj = mySpectreV1TestcasesProject()
+    state = funcEntryState(proj, casename, [ ("idx", publicValue(bits=32)) ])
+    addSecretObject(proj, state, 'secretarray', 16)
+    return (proj, state)
+
+def myspectrev1_case_1():
+    return _mytypicalSpectrev1Case("case_1")
+
+def myspectrev1_case_2():
+    return _mytypicalSpectrev1Case("case_2")
+
+def myspectrev1_case_3():
+    return _mytypicalSpectrev1Case("case_3")
+
+def myspectrev1_case_4():
+    return _mytypicalSpectrev1Case("case_4")
+
+def myspectrev1_case_5():
+    return _mytypicalSpectrev1Case("case_5")
+
+def myspectrev1_case_6():
+    return _mytypicalSpectrev1Case("case_6")
+
+def myspectrev1_case_7():
+    return _mytypicalSpectrev1Case("case_7")
+
+def myspectrev1_case_8():
+    return _mytypicalSpectrev1Case("case_8")
+
+def myspectrev1_case_9():
+    return _mytypicalSpectrev1Case("case_9")
+
+def myspectrev1_case_10():
+    proj = mySpectreV1TestcasesProject()
+    state = funcEntryState(proj, "case_10", [
+        ("idx", publicValue(bits=32)),
+        ("val", publicValue(bits=8))
+    ])
+    addSecretObject(proj, state, 'secretarray', 16)
+    return (proj, state)
+
+def myspectrev1_case_11gcc():
+    return _mytypicalSpectrev1Case("case_11gcc")
+
+def myspectrev1_case_11ker():
+    return _mytypicalSpectrev1Case("case_11ker")
+
+def myspectrev1_case_11sub():
+    return _mytypicalSpectrev1Case("case_11sub")
+
+def myspectrev1_case_12():
+    proj = mySpectreV1TestcasesProject()
+    state = funcEntryState(proj, "case_12", [
+        ("idx", publicValue(bits=32)),
+        ("val", publicValue(bits=8))
+    ])
+    addSecretObject(proj, state, 'secretarray', 16)
+    return (proj, state)
+
+def myspectrev1_case_13():
+    return _mytypicalSpectrev1Case("case_13")
+
+def myspectrev1_case_14():
+    return _mytypicalSpectrev1Case("case_14")
+
+
+def _maskingtypicalSpectrev1Case(casename):
+    proj = maskingSpectreV1TestcasesProject()
+    state = funcEntryState(proj, casename, [ ("idx", publicValue(bits=32)) ])
+    addSecretObject(proj, state, 'secretarray', 16)
+    return (proj, state)
+
+def maskingspectrev1_case_1():
+    return _maskingtypicalSpectrev1Case("case_1")
+
+def maskingspectrev1_case_2():
+    return _maskingtypicalSpectrev1Case("case_2")
+
+def maskingspectrev1_case_3():
+    return _maskingtypicalSpectrev1Case("case_3")
+
+def maskingspectrev1_case_4():
+    return _maskingtypicalSpectrev1Case("case_4")
+
+def maskingspectrev1_case_5():
+    return _maskingtypicalSpectrev1Case("case_5")
+
+def maskingspectrev1_case_6():
+    return _maskingtypicalSpectrev1Case("case_6")
+
+def maskingspectrev1_case_7():
+    return _maskingtypicalSpectrev1Case("case_7")
+
+def maskingspectrev1_case_8():
+    return _maskingtypicalSpectrev1Case("case_8")
+
+def maskingspectrev1_case_9():
+    return _maskingtypicalSpectrev1Case("case_9")
+
+def maskingspectrev1_case_10():
+    proj = maskingSpectreV1TestcasesProject()
+    state = funcEntryState(proj, "case_10", [
+        ("idx", publicValue(bits=32)),
+        ("val", publicValue(bits=8))
+    ])
+    addSecretObject(proj, state, 'secretarray', 16)
+    return (proj, state)
+
+def maskingspectrev1_case_11gcc():
+    return _maskingtypicalSpectrev1Case("case_11gcc")
+
+def maskingspectrev1_case_11ker():
+    return _maskingtypicalSpectrev1Case("case_11ker")
+
+def maskingspectrev1_case_11sub():
+    return _maskingtypicalSpectrev1Case("case_11sub")
+
+def maskingspectrev1_case_12():
+    proj = maskingSpectreV1TestcasesProject()
+    state = funcEntryState(proj, "case_12", [
+        ("idx", publicValue(bits=32)),
+        ("val", publicValue(bits=8))
+    ])
+    addSecretObject(proj, state, 'secretarray', 16)
+    return (proj, state)
+
+def maskingspectrev1_case_13():
+    return _maskingtypicalSpectrev1Case("case_13")
+
+def maskingspectrev1_case_14():
+    return _maskingtypicalSpectrev1Case("case_14")
+
+
+def _typicalSpectrev4Case(casename):
+    proj = newSpectreV4TestcasesProject()
+    state = funcEntryState(proj, casename, [ ("idx", publicValue(bits=32)) ])
+    addSecretObject(proj, state, 'secretarray', 16)
+    return (proj, state)
+
+def spectrev4_case_1():
+    return _typicalSpectrev4Case("case_1")
+
+def spectrev4_case_2():
+    return _typicalSpectrev4Case("case_2")
+
+def spectrev4_case_3():
+    return _typicalSpectrev4Case("case_3")
+
+def spectrev4_case_4():
+    return _typicalSpectrev4Case("case_4")
+
+def spectrev4_case_5():
+    return _typicalSpectrev4Case("case_5")
+
+def spectrev4_case_6():
+    return _typicalSpectrev4Case("case_6")
+
+def spectrev4_case_7():
+    return _typicalSpectrev4Case("case_7")
+
+def spectrev4_case_8():
+    return _typicalSpectrev4Case("case_8")
+
+def spectrev4_case_9():
+    return _typicalSpectrev4Case("case_9")
+
+def spectrev4_case_9_bis():
+    return _typicalSpectrev4Case("case_9_bis")
+
+def spectrev4_case_10():
+    return _typicalSpectrev4Case("case_10")
+
+def spectrev4_case_11():
+    return _typicalSpectrev4Case("case_11")
+
+def spectrev4_case_12():
+    return _typicalSpectrev4Case("case_12")
+
+def spectrev4_case_13():
+    return _typicalSpectrev4Case("case_13")
 
 def tweetnacl_crypto_sign(max_messagelength=256, with_hash_stub=True):
     """
@@ -641,6 +832,147 @@ def spectrev1case13Simgr(**kwargs):
 def spectrev1case14Simgr(**kwargs):
     return _spectreSimgr(spectrev1_case_14, [], "Spectre v1 case 14", "explicit", **kwargs)
 
+
+def myspectrev1case1Simgr(**kwargs):
+    return _spectreSimgr(myspectrev1_case_1, [], "Spectre v1 case 1", "explicit", **kwargs)
+
+def myspectrev1case2Simgr(**kwargs):
+    return _spectreSimgr(myspectrev1_case_2, [], "Spectre v1 case 2", "explicit", **kwargs)
+
+def myspectrev1case3Simgr(**kwargs):
+    return _spectreSimgr(myspectrev1_case_3, [], "Spectre v1 case 3", "explicit", **kwargs)
+
+def myspectrev1case4Simgr(**kwargs):
+    return _spectreSimgr(myspectrev1_case_4, [], "Spectre v1 case 4", "explicit", **kwargs)
+
+def myspectrev1case5Simgr(**kwargs):
+    return _spectreSimgr(myspectrev1_case_5, [], "Spectre v1 case 5", "explicit", **kwargs)
+
+def myspectrev1case6Simgr(**kwargs):
+    return _spectreSimgr(myspectrev1_case_6, [], "Spectre v1 case 6", "explicit", **kwargs)
+
+def myspectrev1case7Simgr(**kwargs):
+    return _spectreSimgr(myspectrev1_case_7, [], "Spectre v1 case 7", "explicit", **kwargs)
+
+def myspectrev1case8Simgr(**kwargs):
+    return _spectreSimgr(myspectrev1_case_8, [], "Spectre v1 case 8", "explicit", **kwargs)
+
+def myspectrev1case9Simgr(**kwargs):
+    return _spectreSimgr(myspectrev1_case_9, [], "Spectre v1 case 9", "explicit", **kwargs)
+
+def myspectrev1case10Simgr(**kwargs):
+    return _spectreSimgr(myspectrev1_case_10, [], "Spectre v1 case 10", "explicit", **kwargs)
+
+def myspectrev1case11gccSimgr(**kwargs):
+    return _spectreSimgr(myspectrev1_case_11gcc, [], "Spectre v1 case 11gcc", "explicit", **kwargs)
+
+def myspectrev1case11kerSimgr(**kwargs):
+    return _spectreSimgr(myspectrev1_case_11ker, [], "Spectre v1 case 11ker", "explicit", **kwargs)
+
+def myspectrev1case11subSimgr(**kwargs):
+    return _spectreSimgr(myspectrev1_case_11sub, [], "Spectre v1 case 11sub", "explicit", **kwargs)
+
+def myspectrev1case12Simgr(**kwargs):
+    return _spectreSimgr(myspectrev1_case_12, [], "Spectre v1 case 12", "explicit", **kwargs)
+
+def myspectrev1case13Simgr(**kwargs):
+    return _spectreSimgr(myspectrev1_case_13, [], "Spectre v1 case 13", "explicit", **kwargs)
+
+def myspectrev1case14Simgr(**kwargs):
+    return _spectreSimgr(myspectrev1_case_14, [], "Spectre v1 case 14", "explicit", **kwargs)
+
+
+def maskingspectrev1case1Simgr(**kwargs):
+    return _spectreSimgr(maskingspectrev1_case_1, [], "Spectre v1 masking case 1", "explicit", **kwargs)
+
+def maskingspectrev1case2Simgr(**kwargs):
+    return _spectreSimgr(maskingspectrev1_case_2, [], "Spectre v1 masking case 2", "explicit", **kwargs)
+
+def maskingspectrev1case3Simgr(**kwargs):
+    return _spectreSimgr(maskingspectrev1_case_3, [], "Spectre v1 masking case 3", "explicit", **kwargs)
+
+def maskingspectrev1case4Simgr(**kwargs):
+    return _spectreSimgr(maskingspectrev1_case_4, [], "Spectre v1 masking case 4", "explicit", **kwargs)
+
+def maskingspectrev1case5Simgr(**kwargs):
+    return _spectreSimgr(maskingspectrev1_case_5, [], "Spectre v1 masking case 5", "explicit", **kwargs)
+
+def maskingspectrev1case6Simgr(**kwargs):
+    return _spectreSimgr(maskingspectrev1_case_6, [], "Spectre v1 masking case 6", "explicit", **kwargs)
+
+def maskingspectrev1case7Simgr(**kwargs):
+    return _spectreSimgr(maskingspectrev1_case_7, [], "Spectre v1 masking case 7", "explicit", **kwargs)
+
+def maskingspectrev1case8Simgr(**kwargs):
+    return _spectreSimgr(maskingspectrev1_case_8, [], "Spectre v1 masking case 8", "explicit", **kwargs)
+
+def maskingspectrev1case9Simgr(**kwargs):
+    return _spectreSimgr(maskingspectrev1_case_9, [], "Spectre v1 masking case 9", "explicit", **kwargs)
+
+def maskingspectrev1case10Simgr(**kwargs):
+    return _spectreSimgr(maskingspectrev1_case_10, [], "Spectre v1 masking case 10", "explicit", **kwargs)
+
+def maskingspectrev1case11gccSimgr(**kwargs):
+    return _spectreSimgr(maskingspectrev1_case_11gcc, [], "Spectre v1 masking case 11gcc", "explicit", **kwargs)
+
+def maskingspectrev1case11kerSimgr(**kwargs):
+    return _spectreSimgr(maskingspectrev1_case_11ker, [], "Spectre v1 masking case 11ker", "explicit", **kwargs)
+
+def maskingspectrev1case11subSimgr(**kwargs):
+    return _spectreSimgr(maskingspectrev1_case_11sub, [], "Spectre v1 masking case 11sub", "explicit", **kwargs)
+
+def maskingspectrev1case12Simgr(**kwargs):
+    return _spectreSimgr(maskingspectrev1_case_12, [], "Spectre v1 masking case 12", "explicit", **kwargs)
+
+def maskingspectrev1case13Simgr(**kwargs):
+    return _spectreSimgr(maskingspectrev1_case_13, [], "Spectre v1 masking case 13", "explicit", **kwargs)
+
+def maskingspectrev1case14Simgr(**kwargs):
+    return _spectreSimgr(maskingspectrev1_case_14, [], "Spectre v1 masking case 14", "explicit", **kwargs)
+
+
+def spectrev4case1Simgr(**kwargs):
+    return _spectreSimgr(spectrev4_case_1, [], "Spectre v4 case 1", "explicit", **kwargs)
+
+def spectrev4case2Simgr(**kwargs):
+    return _spectreSimgr(spectrev4_case_2, [], "Spectre v4 case 2", "explicit", **kwargs)
+
+def spectrev4case3Simgr(**kwargs):
+    return _spectreSimgr(spectrev4_case_3, [], "Spectre v4 case 3", "explicit", **kwargs)
+
+def spectrev4case4Simgr(**kwargs):
+    return _spectreSimgr(spectrev4_case_4, [], "Spectre v4 case 4", "explicit", **kwargs)
+
+def spectrev4case5Simgr(**kwargs):
+    return _spectreSimgr(spectrev4_case_5, [], "Spectre v4 case 5", "explicit", **kwargs)
+
+def spectrev4case6Simgr(**kwargs):
+    return _spectreSimgr(spectrev4_case_6, [], "Spectre v4 case 6", "explicit", **kwargs)
+
+def spectrev4case7Simgr(**kwargs):
+    return _spectreSimgr(spectrev4_case_7, [], "Spectre v4 case 7", "explicit", **kwargs)
+
+def spectrev4case8Simgr(**kwargs):
+    return _spectreSimgr(spectrev4_case_8, [], "Spectre v4 case 8", "explicit", **kwargs)
+
+def spectrev4case9Simgr(**kwargs):
+    return _spectreSimgr(spectrev4_case_9, [], "Spectre v4 case 9", "explicit", **kwargs)
+
+def spectrev4case9_bisSimgr(**kwargs):
+    return _spectreSimgr(spectrev4_case_9_bis, [], "Spectre v4 case 9bis", "explicit", **kwargs)
+
+def spectrev4case10Simgr(**kwargs):
+    return _spectreSimgr(spectrev4_case_10, [], "Spectre v4 case 10", "explicit", **kwargs)
+
+def spectrev4case11Simgr(**kwargs):
+    return _spectreSimgr(spectrev4_case_11, [], "Spectre v4 case 11", "explicit", **kwargs)
+
+def spectrev4case12Simgr(**kwargs):
+    return _spectreSimgr(spectrev4_case_12, [], "Spectre v4 case 12", "explicit", **kwargs)
+
+def spectrev4case13Simgr(**kwargs):
+    return _spectreSimgr(spectrev4_case_13, [], "Spectre v4 case 13", "explicit", **kwargs)
+
 def forwarding1Simgr(**kwargs):
     return _spectreSimgr(forwarding_example_1, [], "forwarding example 1", "explicit", **kwargs)
 
@@ -760,6 +1092,61 @@ def runallSpectrev1(**kwargs):
              "14" : spectrev1case14Simgr(**kwargs)
            }
 
+def runallmySpectrev1(**kwargs):
+    return { "01" : myspectrev1case1Simgr(**kwargs),
+             "02" : myspectrev1case2Simgr(**kwargs),
+             "03" : myspectrev1case3Simgr(**kwargs),
+             "04" : myspectrev1case4Simgr(**kwargs),
+             "05" : myspectrev1case5Simgr(**kwargs),
+             "06" : myspectrev1case6Simgr(**kwargs),
+             "07" : myspectrev1case7Simgr(**kwargs),
+             "08" : myspectrev1case8Simgr(**kwargs),
+             "09" : myspectrev1case9Simgr(**kwargs),
+             "10" : myspectrev1case10Simgr(**kwargs),
+             "11gcc" : myspectrev1case11gccSimgr(**kwargs),
+             "11ker" : myspectrev1case11kerSimgr(**kwargs),
+             "11sub" : myspectrev1case11subSimgr(**kwargs),
+             "12" : myspectrev1case12Simgr(**kwargs),
+             "13" : myspectrev1case13Simgr(**kwargs),
+             "14" : myspectrev1case14Simgr(**kwargs)
+           }
+
+def runallmaskingSpectrev1(**kwargs):
+    return { "01" : maskingspectrev1case1Simgr(**kwargs),
+             "02" : maskingspectrev1case2Simgr(**kwargs),
+             "03" : maskingspectrev1case3Simgr(**kwargs),
+             "04" : maskingspectrev1case4Simgr(**kwargs),
+             "05" : maskingspectrev1case5Simgr(**kwargs),
+             "06" : maskingspectrev1case6Simgr(**kwargs),
+             "07" : maskingspectrev1case7Simgr(**kwargs),
+             "08" : maskingspectrev1case8Simgr(**kwargs),
+             "09" : maskingspectrev1case9Simgr(**kwargs),
+             "10" : maskingspectrev1case10Simgr(**kwargs),
+             "11gcc" : maskingspectrev1case11gccSimgr(**kwargs),
+             "11ker" : maskingspectrev1case11kerSimgr(**kwargs),
+             "11sub" : maskingspectrev1case11subSimgr(**kwargs),
+             "12" : maskingspectrev1case12Simgr(**kwargs),
+             "13" : maskingspectrev1case13Simgr(**kwargs),
+             "14" : maskingspectrev1case14Simgr(**kwargs)
+           }
+
+def runallSpectrev4(**kwargs):
+    return { "01" : spectrev4case1Simgr(**kwargs),
+             "02" : spectrev4case2Simgr(**kwargs),
+             "03" : spectrev4case3Simgr(**kwargs),
+             "04" : spectrev4case4Simgr(**kwargs),
+             "05" : spectrev4case5Simgr(**kwargs),
+             "06" : spectrev4case6Simgr(**kwargs),
+             "07" : spectrev4case7Simgr(**kwargs),
+             "08" : spectrev4case8Simgr(**kwargs),
+             "09" : spectrev4case9Simgr(**kwargs),
+             "09_bis" : spectrev4case9_bisSimgr(**kwargs),
+             "10" : spectrev4case10Simgr(**kwargs),
+             "11" : spectrev4case11Simgr(**kwargs),
+             "12" : spectrev4case12Simgr(**kwargs),
+             "13" : spectrev4case13Simgr(**kwargs)
+           }
+
 def runallForwarding(**kwargs):
     return { "1" : forwarding1Simgr(**kwargs),
              "2" : forwarding2Simgr(**kwargs),
@@ -768,7 +1155,7 @@ def runallForwarding(**kwargs):
              "5" : forwarding5Simgr(**kwargs)
            }
 
-def alltests(kocher=True, spectrev1=True, forwarding=True, tweetnacl=True, test=True):
+def alltests(kocher=True, spectrev1=True, spectrev4=True, forwarding=True, tweetnacl=True, test=True):
     """
     kocher: whether to run Kocher tests
     spectrev1: whether to run the new spectrev1 tests
@@ -777,7 +1164,7 @@ def alltests(kocher=True, spectrev1=True, forwarding=True, tweetnacl=True, test=
     test: whether to run my tests
     """
     from pprint import pprint
-    if not kocher and not spectrev1 and not forwarding and not tweetnacl and not test:
+    if not kocher and not spectrev1 and not spectrev4 and not forwarding and not tweetnacl and not test:
         raise ValueError("no tests specified")
     logging.getLogger('specvex').setLevel(logging.WARNING)
     logging.getLogger('spectre').setLevel(logging.WARNING)
@@ -788,6 +1175,9 @@ def alltests(kocher=True, spectrev1=True, forwarding=True, tweetnacl=True, test=
     if spectrev1:
         spectrev1_notspec = runallSpectrev1(spec=False)
         spectrev1_spec = runallSpectrev1(spec=True)
+    if spectrev4:
+        # spectrev4_notspec = runallSpectrev4(spec=False)
+        spectrev4_spec = runallSpectrev4(spec=True, misforwarding=True)
     if forwarding:
         forwarding_notspec = runallForwarding(spec=False)
         forwarding_forwarding = runallForwarding(spec=True)
@@ -824,6 +1214,16 @@ def alltests(kocher=True, spectrev1=True, forwarding=True, tweetnacl=True, test=
             return ("FAIL: detected a violation without speculative execution" if violationDetected(spectrev1_notspec[s])
                 else "FAIL: no violation detected" if not violationDetected(spectrev1_spec[s])
                 else "PASS")
+    def spectrev4_testResult(s):
+        if s == '08':
+            # Test case '08' should not report any violations, because it compiles to a 'cmov' instruction on x86 and is constant-time
+            return ("FAIL: detected a violation without speculative execution" if violationDetected(spectrev1_notspec[s])
+                    else "FAIL: detected a violation, expected no violation" if violationDetected(spectrev1_spec[s])
+                    else "PASS")
+        else:
+            return ("FAIL: detected a violation without speculative execution" if violationDetected(spectrev1_notspec[s])
+                else "FAIL: no violation detected" if not violationDetected(spectrev1_spec[s])
+                else "PASS")
     def forwarding_testResult(s):
         return ("FAIL: detected a violation without speculative execution" if violationDetected(forwarding_notspec[s])
             else "FAIL: no violation detected" if not violationDetected(forwarding_forwarding[s])
@@ -835,6 +1235,7 @@ def alltests(kocher=True, spectrev1=True, forwarding=True, tweetnacl=True, test=
     kocher_results = {k:kocher_testResult(k) for k in kocher_spec.keys()} if kocher else None
     test_results = {k:test_testResult(k) for k in test_spec.keys()} if test else None
     spectrev1_results = {k:spectrev1_testResult(k) for k in spectrev1_spec.keys()} if spectrev1 else None
+    spectrev4_results = {k:spectrev4_testResult(k) for k in spectrev4_spec.keys()} if spectrev4 else None
     forwarding_results = {k:forwarding_testResult(k) for k in forwarding_forwarding.keys()} if forwarding else None
     tweetnacl_results = {k:tweetnacl_testResult(k) for k in tweetnacl_spec.keys()} if tweetnacl else None
     if kocher and not spectrev1 and not forwarding and not tweetnacl:
@@ -843,6 +1244,9 @@ def alltests(kocher=True, spectrev1=True, forwarding=True, tweetnacl=True, test=
     elif spectrev1 and not kocher and not forwarding and not tweetnacl:
         print("Spectrev1 tests:")
         pprint(spectrev1_results)
+    elif spectrev4 and not kocher and not forwarding and not tweetnacl:
+        print("Spectrev4 tests:")
+        pprint(spectrev4_results)
     elif forwarding and not kocher and not spectrev1 and not tweetnacl:
         print("Forwarding tests:")
         pprint(forwarding_results)
@@ -852,6 +1256,7 @@ def alltests(kocher=True, spectrev1=True, forwarding=True, tweetnacl=True, test=
     else:
         pprint({"Kocher tests":kocher_results,
                 "Spectrev1 tests":spectrev1_results,
+                "Spectrev4 tests":spectrev4_results,
                 "Forwarding tests":forwarding_results,
                 "TweetNaCl tests":tweetnacl_results})
 
@@ -859,4 +1264,33 @@ def unionDicts(dicta, dictb):
     return {**dicta, **dictb}  # requires Python 3.5+
 
 if __name__ == '__main__':
-    alltests(tweetnacl=False)
+    # alltests(kocher=False, spectrev1=True, spectrev4=False,
+    #          forwarding=False, tweetnacl=False, test=False)
+    # alltests(kocher=False, spectrev1=False, spectrev4=True,
+    #          forwarding=False, tweetnacl=False, test=False)
+    
+    switch = { "01" : spectrev4case1Simgr,
+               "02" : spectrev4case2Simgr,
+               "03" : spectrev4case3Simgr,
+               "04" : spectrev4case4Simgr,
+               "05" : spectrev4case5Simgr,
+               "06" : spectrev4case6Simgr,
+               "07" : spectrev4case7Simgr,
+               "08" : spectrev4case8Simgr,
+               "09" : spectrev4case9Simgr,
+               "09_bis" : spectrev4case9_bisSimgr,
+               "10" : spectrev4case10Simgr,
+               "11" : spectrev4case11Simgr,
+               "12" : spectrev4case12Simgr,
+               "13" : spectrev4case13Simgr
+    }
+
+    if sys.argv[1] == "spectrev1":
+        runallmySpectrev1(spec=True, window=200)
+    elif sys.argv[1] == "spectrev1masking":
+        runallmaskingSpectrev1(spec=True, window=200)
+    elif sys.argv[1] == "test":
+        runallTest(spec=True, window=200)
+    else:
+        function = switch.get(sys.argv[1])
+        function(spec=True, window=200, misforwarding=True)
