@@ -1,8 +1,8 @@
-CC=clang
-CFLAGS=-O0
+CC=gcc
+CFLAGS=-m32 -march=i386 -fno-stack-protector -static -no-pie -fno-pic
 
-.PHONY: all
-all : spectrev1 forwarding
+.PHONY: all spectrev1 forwarding test
+all : spectrev1 forwarding test
 
 test : test.c
 	$(CC) $(CFLAGS) $< -o $@
